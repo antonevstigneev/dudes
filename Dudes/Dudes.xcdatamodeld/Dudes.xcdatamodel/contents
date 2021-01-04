@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Sticker" representedClassName="Sticker" syncable="YES">
+        <attribute name="emotion" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="stickerpack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stickerpack" inverseName="stickers" inverseEntity="Stickerpack"/>
+    </entity>
+    <entity name="Stickerpack" representedClassName="Stickerpack" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isExported" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isInUpdateMode" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="stickers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sticker" inverseName="stickerpack" inverseEntity="Sticker"/>
+    </entity>
+    <elements>
+        <element name="Sticker" positionX="9.3133544921875" positionY="225.8142395019531" width="128" height="104"/>
+        <element name="Stickerpack" positionX="9" positionY="261" width="128" height="104"/>
+    </elements>
+</model>

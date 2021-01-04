@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G3G-r6-g53">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Subscription View Controller-->
+        <scene sceneID="oIs-Ws-j93">
+            <objects>
+                <viewController id="6IO-Pp-3QI" customClass="SubscriptionViewController" customModule="Dudes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uAa-FU-c0t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i4Z-wH-GR0">
+                                <rect key="frame" x="122.5" y="375" width="169" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBSCRIPTION STATUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6L-yU-Zbz">
+                                        <rect key="frame" x="4.5" y="0.0" width="160.5" height="29"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a95-bW-UwU">
+                                        <rect key="frame" x="0.0" y="29" width="169" height="29"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                        <state key="normal" title="MANAGE SUBSCRIPTIONS">
+                                            <color key="titleColor" name="AccentColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="manageSubscription:" destination="6IO-Pp-3QI" eventType="touchUpInside" id="2kG-XP-8Co"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e0T-0J-q3S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i4Z-wH-GR0" firstAttribute="centerY" secondItem="uAa-FU-c0t" secondAttribute="centerY" id="KGM-kS-oAE"/>
+                            <constraint firstItem="i4Z-wH-GR0" firstAttribute="centerX" secondItem="uAa-FU-c0t" secondAttribute="centerX" id="vb5-ZX-lsf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iaL-29-8NE">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ppQ-Rg-PP5"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="subscriptionButton" destination="a95-bW-UwU" id="XRz-Ae-pd7"/>
+                        <outlet property="subscriptionStackView" destination="i4Z-wH-GR0" id="am2-X4-vMA"/>
+                        <outlet property="subscriptionStatusLabel" destination="a6L-yU-Zbz" id="ATF-Wb-VSR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a18-fT-4Xd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2410" y="-754"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="GQ0-7i-SYF">
+            <objects>
+                <viewController interfaceStyle="dark" id="Rag-7C-6Dy" customClass="MenuViewController" customModule="Dudes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FfZ-u0-6Fx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="39G-zn-b7X"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q6g-hC-3NZ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="TbO-pS-ijM"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Wv1-Gy-tf0" kind="show" identifier="AboutViewController" id="t5o-Tm-QsL"/>
+                        <segue destination="6IO-Pp-3QI" kind="show" identifier="SubscriptionViewController" id="oP4-NV-vYv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPo-iD-l1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832" y="-754"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="6x0-eq-UlI">
+            <objects>
+                <viewController interfaceStyle="dark" id="Wv1-Gy-tf0" customClass="AboutViewController" customModule="Dudes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9rP-pv-IBn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pxM-v7-9wh">
+                                <rect key="frame" x="156" y="596" width="102" height="78"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP VERSION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jn-Xc-WfC">
+                                        <rect key="frame" x="11.5" y="0.0" width="79.5" height="26"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6S-gi-Pkz">
+                                        <rect key="frame" x="0.0" y="26" width="102" height="26"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <state key="normal" title="PRIVACY POLICY"/>
+                                        <connections>
+                                            <action selector="privacyPolicy:" destination="Wv1-Gy-tf0" eventType="touchUpInside" id="58I-Eg-x0w"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuR-Yr-agp">
+                                        <rect key="frame" x="7.5" y="52" width="87" height="26"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <state key="normal" title="TERMS OF USE"/>
+                                        <connections>
+                                            <action selector="termsOfUse:" destination="Wv1-Gy-tf0" eventType="touchUpInside" id="khq-Lv-vYR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JpW-Ql-G10"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JpW-Ql-G10" firstAttribute="bottom" secondItem="pxM-v7-9wh" secondAttribute="bottom" constant="100" id="4of-gI-x4p"/>
+                            <constraint firstItem="pxM-v7-9wh" firstAttribute="centerX" secondItem="9rP-pv-IBn" secondAttribute="centerX" id="vK8-ge-F4s"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cl0-gh-Y3r">
+                        <barButtonItem key="backBarButtonItem" title=" " id="iB3-CM-6wW"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="appVersionLabel" destination="0Jn-Xc-WfC" id="Xp3-0q-qAM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrd-zN-bsH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="-754"/>
+        </scene>
+        <!--Stickerpacks View Controller-->
+        <scene sceneID="cbk-68-IZH">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" interfaceStyle="dark" id="gkR-mu-xUU" customClass="StickerpacksViewController" customModule="Dudes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kvw-KQ-kko">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c1m-xE-R4P">
+                                <rect key="frame" x="117" y="364" width="180" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSX-Ib-dKq">
+                                        <rect key="frame" x="77" y="0.0" width="26" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SO EMPTY HERE..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUC-yX-Fy1">
+                                        <rect key="frame" x="32" y="40" width="116" height="40"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="1iG-6S-d4g"/>
+                                    <constraint firstAttribute="width" constant="180" id="e8c-h7-j3m"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2jR-FE-xXW"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c1m-xE-R4P" firstAttribute="centerX" secondItem="Kvw-KQ-kko" secondAttribute="centerX" id="DaP-nP-819"/>
+                            <constraint firstItem="c1m-xE-R4P" firstAttribute="centerY" secondItem="Kvw-KQ-kko" secondAttribute="centerY" id="deC-E2-KSe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tCd-yW-eqD">
+                        <barButtonItem key="backBarButtonItem" title=" " id="oC7-7u-ytU"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emptyStateView" destination="c1m-xE-R4P" id="ars-w2-BQQ"/>
+                        <segue destination="fNV-uc-4d3" kind="show" identifier="StickerpackViewController" id="tme-eY-p9c"/>
+                        <segue destination="Qkn-YR-c9I" kind="show" identifier="DudesViewController" id="yaL-Jc-pfI"/>
+                        <segue destination="Rag-7C-6Dy" kind="show" identifier="MenuViewController" id="js3-gI-xr5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NbQ-Kl-QRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831.88405797101461" y="-38.169642857142854"/>
+        </scene>
+        <!--Dudes Unlim View Controller-->
+        <scene sceneID="bQJ-N3-lpA">
+            <objects>
+                <viewController storyboardIdentifier="DudesUnlimViewController" interfaceStyle="dark" id="vbJ-IA-RPg" customClass="DudesUnlimViewController" customModule="Dudes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vcW-1O-m9e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ar4-04-OLX">
+                                <rect key="frame" x="74.5" y="311" width="265" height="185"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPGRADE TO DUDES UNLIM" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRK-VI-Nxl">
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fTp-QB-lLF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                        <color key="textColor" name="AccentColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GET DUDES UNLIM AND UNLOCK THESE FEATURES:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSx-Gm-p58">
+                                        <rect key="frame" x="0.0" y="30" width="265" height="35"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="OHK-XV-xlJ"/>
+                                            <constraint firstAttribute="width" constant="265" id="phl-Me-VcI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
+                                        <color key="textColor" white="0.49665992576759177" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1J-ol-c1R">
+                                        <rect key="frame" x="2" y="65" width="261.5" height="120"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="XUR-4N-AzW"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="•">
+                                                <attributes>
+                                                    <color key="NSColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="UNLIMITED STICKERPACK EXPORTS">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="•">
+                                                <attributes>
+                                                    <color key="NSColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="UNLIMITED STICKERPACK UPDATES">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="•">
+                                                <attributes>
+                                                    <color key="NSColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="UNLIMITED STICKERPACK SHARING">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="14" name="Menlo-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pih-aY-fqY">
+                                <rect key="frame" x="72" y="616" width="270" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sc-s3-niL">
+                                        <rect key="frame" x="40.5" y="0.0" width="189" height="34"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="0"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="1 MONTH: $0.99">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="getSubscription:" destination="vbJ-IA-RPg" eventType="touchUpInside" id="E4M-7s-gb4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjx-Jv-zFC">
+                                        <rect key="frame" x="46.5" y="54" width="177" height="34"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="1"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="1 YEAR: $9.99">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="getSubscription:" destination="vbJ-IA-RPg" eventType="touchUpInside" id="uMi-hj-V83"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDp-s1-sVM">
+                                        <rect key="frame" x="83.5" y="108" width="103" height="24"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
+                                        <state key="normal" title="RESTORE PURCHASES"/>
+                                        <connections>
+                                            <action selector="restorePurchases:" destination="vbJ-IA-RPg" eventType="touchUpInside" id="eLc-6y-Zo1"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnG-bE-pvk">
+                                        <rect key="frame" x="0.0" y="152" width="270" height="60"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="iRp-fg-wdy"/>
+                                            <constraint firstAttribute="width" constant="270" id="mpc-v5-ri2"/>
+                                        </constraints>
+                                        <string key="text">Payment will be charged to your iTunes account at confirmation of purchase. Subscriptions will automatically renew unless auto-renew is turned off at least 24 hours before the end of current period. Your account will be charged according to your plan for renewal within 24 hours prior to the end of the current period. You can manage or turn off auto-renew in your Apple ID account settings at any time after purchase.</string>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="7"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="X3W-b7-Ikv">
+                                        <rect key="frame" x="78.5" y="232" width="113" height="8"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMH-Uc-iC9">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="8"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="6"/>
+                                                <state key="normal" title="PRIVACY POLICY">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="privacyPolicy:" destination="vbJ-IA-RPg" eventType="touchUpInside" id="2m9-1I-AwU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZa-xs-blX">
+                                                <rect key="frame" x="65" y="0.0" width="48" height="8"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="6"/>
+                                                <state key="normal" title="TERMS OF USE">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="termsOfUse:" destination="vbJ-IA-RPg" eventType="touchUpInside" id="FLr-Uh-qN1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="Qul-bc-ZPi"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsc-YM-OHg">
+                                <rect key="frame" x="359" y="20" width="30" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.50050407356315563" alpha="1" colorSpace="calibratedWhite"/>
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="medium"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="19"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeViewController:" destination="vbJ-IA-RPg" eventType="touchUpInside" id="nl2-Dp-jYs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F1t-bQ-xE6"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Pih-aY-fqY" secondAttribute="bottom" constant="40" id="1Ge-e4-EVX"/>
+                            <constraint firstItem="Pih-aY-fqY" firstAttribute="top" secondItem="ar4-04-OLX" secondAttribute="bottom" constant="120" id="2cZ-sH-Tui"/>
+                            <constraint firstItem="Pih-aY-fqY" firstAttribute="centerX" secondItem="vcW-1O-m9e" secondAttribute="centerX" id="TnT-me-vng"/>
+                            <constraint firstItem="ar4-04-OLX" firstAttribute="centerX" secondItem="vcW-1O-m9e" secondAttribute="centerX" id="Xhp-S3-w9T"/>
+                            <constraint firstItem="F1t-bQ-xE6" firstAttribute="trailing" secondItem="Fsc-YM-OHg" secondAttribute="trailing" constant="25" id="Yxj-1C-TeJ"/>
+                            <constraint firstItem="ar4-04-OLX" firstAttribute="centerX" secondItem="vcW-1O-m9e" secondAttribute="centerX" id="e0E-do-Jbx"/>
+                            <constraint firstItem="Fsc-YM-OHg" firstAttribute="top" secondItem="vcW-1O-m9e" secondAttribute="top" constant="20" id="iQB-jW-k5Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hC1-jI-dHE"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="monthlySubscriptionButton" destination="3sc-s3-niL" id="Yiq-e4-GN8"/>
+                        <outlet property="subscriptionFeatures" destination="ar4-04-OLX" id="ibr-g7-WY5"/>
+                        <outlet property="subscriptionProducts" destination="Pih-aY-fqY" id="j8Y-65-iVf"/>
+                        <outlet property="yearlySubscriptionButton" destination="Cjx-Jv-zFC" id="PoN-b8-r3g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="coF-XV-wWn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831.88405797101461" y="657.58928571428567"/>
+        </scene>
+        <!--Dudes View Controller-->
+        <scene sceneID="580-xV-P7l">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" interfaceStyle="dark" id="Qkn-YR-c9I" customClass="DudesViewController" customModule="Dudes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cjf-sm-vZh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btj-Cm-3Pj">
+                                <rect key="frame" x="0.0" y="658" width="414" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/99 SELECTED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dok-Be-XMh">
+                                        <rect key="frame" x="156.5" y="91" width="101" height="14"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFn-Gp-bcc">
+                                        <rect key="frame" x="333" y="69" width="56" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="3gZ-sY-1iA"/>
+                                            <constraint firstAttribute="height" constant="56" id="OuA-xC-fe0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="chevron.right" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createStickerpack:" destination="Qkn-YR-c9I" eventType="touchUpInside" id="NLG-3D-ftS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="oFn-Gp-bcc" secondAttribute="trailing" constant="25" id="EXd-YB-9Ak"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dok-Be-XMh" secondAttribute="bottom" constant="45" id="OUt-gC-Ibp"/>
+                                    <constraint firstAttribute="bottom" secondItem="oFn-Gp-bcc" secondAttribute="bottom" constant="25" id="PpL-uA-gsX"/>
+                                    <constraint firstAttribute="height" constant="150" id="UWE-CQ-0ps"/>
+                                    <constraint firstItem="Dok-Be-XMh" firstAttribute="centerX" secondItem="btj-Cm-3Pj" secondAttribute="centerX" id="jTX-MS-Flw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IR4-81-TBE"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="btj-Cm-3Pj" secondAttribute="bottom" id="JRh-KW-VM8"/>
+                            <constraint firstItem="btj-Cm-3Pj" firstAttribute="centerX" secondItem="cjf-sm-vZh" secondAttribute="centerX" id="Niv-Ip-2hm"/>
+                            <constraint firstItem="btj-Cm-3Pj" firstAttribute="leading" secondItem="IR4-81-TBE" secondAttribute="leading" id="qHm-yA-vF8"/>
+                            <constraint firstItem="IR4-81-TBE" firstAttribute="trailing" secondItem="btj-Cm-3Pj" secondAttribute="trailing" id="san-J3-UF4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BhM-Cp-WLI">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Mvn-Aw-rFj"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="controlsView" destination="btj-Cm-3Pj" id="pbz-RI-Xlq"/>
+                        <outlet property="createStickerpackButton" destination="oFn-Gp-bcc" id="yiY-Th-vCi"/>
+                        <outlet property="selectedLabel" destination="Dok-Be-XMh" id="cqO-H7-DWC"/>
+                        <segue destination="fNV-uc-4d3" kind="show" identifier="StickerpackViewController" id="jpt-CG-h2i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FoY-VK-cex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620.289855072464" y="-38.169642857142854"/>
+        </scene>
+        <!--Stickerpack View Controller-->
+        <scene sceneID="CPD-5C-ggN">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" interfaceStyle="dark" id="fNV-uc-4d3" customClass="StickerpackViewController" customModule="Dudes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KOj-KG-5UD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVP-mo-khs">
+                                <rect key="frame" x="94.5" y="724" width="225" height="34"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="exportStickerpack"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="SHARE STICKERPACK">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendStickerpackRequest:" destination="fNV-uc-4d3" eventType="touchUpInside" id="61m-kO-4GU"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQh-V9-Y7q">
+                                <rect key="frame" x="88.5" y="724" width="237" height="34"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="updateStickerpack"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="1Xi-a6-YPX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="UPDATE STICKERPACK">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendStickerpackRequest:" destination="fNV-uc-4d3" eventType="touchUpInside" id="mZG-41-tmg"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XSk-al-0S1">
+                                <rect key="frame" x="117" y="364" width="180" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2O-33-BzF">
+                                        <rect key="frame" x="77" y="0.0" width="26" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SO EMPTY HERE..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCA-wH-4E7">
+                                        <rect key="frame" x="32" y="40" width="116" height="40"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="ZJj-oy-unE"/>
+                                    <constraint firstAttribute="height" constant="80" id="sZj-MW-K3h"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zpN-xJ-XuE"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="XVP-mo-khs" secondAttribute="bottom" constant="50" id="1mG-Xb-bAn"/>
+                            <constraint firstItem="XSk-al-0S1" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="3F7-09-BjC"/>
+                            <constraint firstItem="XVP-mo-khs" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="3TT-C9-QBP"/>
+                            <constraint firstItem="EQh-V9-Y7q" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="ENs-eZ-jvH"/>
+                            <constraint firstItem="XSk-al-0S1" firstAttribute="centerY" secondItem="KOj-KG-5UD" secondAttribute="centerY" id="iOi-DB-Ccy"/>
+                            <constraint firstAttribute="bottom" secondItem="EQh-V9-Y7q" secondAttribute="bottom" constant="50" id="s4A-vM-frq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ax1-ny-cVp">
+                        <barButtonItem key="backBarButtonItem" title=" " id="acC-GR-4ZO"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emptyStateView" destination="XSk-al-0S1" id="0nc-5I-z3p"/>
+                        <outlet property="exportStickerpackButton" destination="XVP-mo-khs" id="PFj-oT-ywQ"/>
+                        <outlet property="updateStickerpackButton" destination="EQh-V9-Y7q" id="JZZ-th-eel"/>
+                        <segue destination="G3G-r6-g53" kind="show" identifier="StickerpacksViewController" id="07s-h3-muQ"/>
+                        <segue destination="Qkn-YR-c9I" kind="show" identifier="DudesViewController" id="PjL-Ni-1w8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EWo-Pw-kBe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2410.144927536232" y="-38.169642857142854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="32c-Eb-hsE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" interfaceStyle="dark" id="G3G-r6-g53" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TdB-Up-XzW">
+                        <barButtonItem key="backBarButtonItem" title=" " id="M73-DF-g0O"/>
+                    </navigationItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="eOH-U7-nRY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="AccentColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gkR-mu-xUU" kind="relationship" relationship="rootViewController" id="j7O-qx-VXf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9iF-BT-nfa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-78.260869565217391" y="-38.169642857142854"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tme-eY-p9c"/>
+        <segue reference="PjL-Ni-1w8"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" name="AccentColor"/>
+    <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.25882352941176473" green="0.94117647058823528" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A0CA7F1255F2EB200AEB278 /* CVPixelBuffer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CA7F0255F2EB200AEB278 /* CVPixelBuffer+Helpers.swift */; };
+		3A0CA7F5255F2F7600AEB278 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CA7F4255F2F7600AEB278 /* UIImage+CVPixelBuffer.swift */; };
+		3A0CA7F8255F301300AEB278 /* CGImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CA7F7255F301300AEB278 /* CGImage+CVPixelBuffer.swift */; };
+		3A0D05CA254ED1B8002E5876 /* DudesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D05C9254ED1B8002E5876 /* DudesViewController.swift */; };
+		3A1906D6258FF95000D6EE9C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1906D5258FF95000D6EE9C /* CloudKit.framework */; };
+		3A1F8D1B258E6DE700B78A42 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F8D1A258E6DE700B78A42 /* UICollectionViewExtension.swift */; };
+		3A2EF15925776E55003E9849 /* Dudes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EF15725776E55003E9849 /* Dudes.xcdatamodeld */; };
+		3A453E2B258146FD00FA20C7 /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453E2A258146FD00FA20C7 /* NetworkState.swift */; };
+		3A453E3F2581777700FA20C7 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453E3E2581777700FA20C7 /* UIButtonExtension.swift */; };
+		3A4802AF257E0C01000E04B5 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4802AE257E0C01000E04B5 /* Animations.swift */; };
+		3A4F940925A13D9700CE3D23 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F940825A13D9700CE3D23 /* SubscriptionViewController.swift */; };
+		3A4F941325A1D3D900CE3D23 /* Legal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F941225A1D3D900CE3D23 /* Legal.swift */; };
+		3A54F3FD2560E4980015C56A /* ShapeSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54F3FC2560E4980015C56A /* ShapeSkeleton.swift */; };
+		3A551B2B25663D310027684F /* EmotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A551B2A25663D310027684F /* EmotionModel.swift */; };
+		3A5AA3C1257913DF00BDBD68 /* DudesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AA3C0257913DF00BDBD68 /* DudesGenerator.swift */; };
+		3A5AA3C72579179400BDBD68 /* dudes.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AA3C62579179400BDBD68 /* dudes.mlmodel */; };
+		3A5BDA77257FF1C7005FB1B7 /* PostRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5BDA76257FF1C7005FB1B7 /* PostRequests.swift */; };
+		3A603837258A8F7C00D648AD /* Dude.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A603836258A8F7C00D648AD /* Dude.swift */; };
+		3A60383F258AA45B00D648AD /* StickerpacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60383E258AA45B00D648AD /* StickerpacksViewController.swift */; };
+		3A603843258AA49F00D648AD /* StickerpackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A603842258AA49F00D648AD /* StickerpackViewController.swift */; };
+		3A603847258AA7EE00D648AD /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A603846258AA7EE00D648AD /* DateExtension.swift */; };
+		3A60384B258AB31400D648AD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60384A258AB31400D648AD /* UIViewControllerExtension.swift */; };
+		3A6F74F62577922E004DC417 /* DudeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F74F52577922E004DC417 /* DudeCell.swift */; };
+		3A82B2AC2589029D008AEC06 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A82B2AB2589029D008AEC06 /* FilterCell.swift */; };
+		3A82B2B02589051E008AEC06 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A82B2AF2589051E008AEC06 /* Filter.swift */; };
+		3A87DD2925483EE800057501 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A87DD2725483EE800057501 /* UIViewExtension.swift */; };
+		3A8E9C7F254F0203007E2329 /* CGPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E9C7E254F0203007E2329 /* CGPointExtension.swift */; };
+		3A93FE6025491A1D00CE51FD /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A93FE5F25491A1D00CE51FD /* UIImageExtension.swift */; };
+		3AA2C52525A38F8100656D0D /* Stickerpack+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52125A38F8100656D0D /* Stickerpack+CoreDataClass.swift */; };
+		3AA2C52625A38F8100656D0D /* Sticker+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52225A38F8100656D0D /* Sticker+CoreDataClass.swift */; };
+		3AA2C52725A38F8100656D0D /* Stickerpack+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52325A38F8100656D0D /* Stickerpack+CoreDataProperties.swift */; };
+		3AA2C52825A38F8100656D0D /* Sticker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52425A38F8100656D0D /* Sticker+CoreDataProperties.swift */; };
+		3AAA9576259B21450064A3A2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA9575259B21450064A3A2 /* MenuViewController.swift */; };
+		3AAA9583259C7F300064A3A2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA9582259C7F300064A3A2 /* AboutViewController.swift */; };
+		3AAA9590259CD8C30064A3A2 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA958F259CD8C30064A3A2 /* Menu.swift */; };
+		3AAA9595259DA18B0064A3A2 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA9594259DA18B0064A3A2 /* DeviceInfo.swift */; };
+		3AB4FC31256355910050C898 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4FC30256355910050C898 /* CVPixelBufferExtension.swift */; };
+		3ABA0C212595BCCD003560FF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABA0C202595BCCD003560FF /* StoreKit.framework */; };
+		3ABA0C242596C4CD003560FF /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA0C232596C4CD003560FF /* IAPManager.swift */; };
+		3ABA0C352596E89A003560FF /* DudesUnlimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA0C342596E89A003560FF /* DudesUnlimViewController.swift */; };
+		3ACE4B8425334484001AF0F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE4B8325334484001AF0F6 /* AppDelegate.swift */; };
+		3ACE4B8625334484001AF0F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE4B8525334484001AF0F6 /* SceneDelegate.swift */; };
+		3ACE4B8B25334484001AF0F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE4B8925334484001AF0F6 /* Main.storyboard */; };
+		3ACE4B9025334485001AF0F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE4B8F25334485001AF0F6 /* Assets.xcassets */; };
+		3ACE4BA225334C36001AF0F6 /* DudesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE4BA125334C36001AF0F6 /* DudesModel.swift */; };
+		3AD7383D258D4A0500A6107C /* StickerpackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7383C258D4A0500A6107C /* StickerpackCell.swift */; };
+		3AD73841258D6D2200A6107C /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD73840258D6D2200A6107C /* UIStackViewExtension.swift */; };
+		3AD842522556F90900751D92 /* CGPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD842512556F90900751D92 /* CGPathExtension.swift */; };
+		3AD842552556F91900751D92 /* UIBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD842542556F91900751D92 /* UIBezierPathExtension.swift */; };
+		3AD8426025573F4700751D92 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD8425F25573F4700751D92 /* UIColor.swift */; };
+		3AD84263255743AA00751D92 /* CGFloatPercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD84262255743AA00751D92 /* CGFloatPercentage.swift */; };
+		3ADB78C3257FD1B300F7C8FA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB78C2257FD1B300F7C8FA /* StringExtension.swift */; };
+		3AE9D71A25683A4C001E4F37 /* emotion_classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9D71925683A4C001E4F37 /* emotion_classifier.mlmodel */; };
+		3AE9D721256844C1001E4F37 /* SequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9D720256844C1001E4F37 /* SequenceExtension.swift */; };
+		3AED8AD62589918C00EA08AE /* SpinnerIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED8AD52589918C00EA08AE /* SpinnerIndicator.swift */; };
+		3AF8491E25A361560013DB5B /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 3AF8491D25A361560013DB5B /* Stickers.xcstickers */; };
+		3AF8494325A362A40013DB5B /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8492525A361FE0013DB5B /* Messages.framework */; };
+		3AF8494625A362A40013DB5B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8494525A362A40013DB5B /* MessagesViewController.swift */; };
+		3AF8494925A362A40013DB5B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF8494725A362A40013DB5B /* MainInterface.storyboard */; };
+		3AF8494B25A362A60013DB5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF8494A25A362A60013DB5B /* Assets.xcassets */; };
+		3AF8494F25A362A60013DB5B /* Dudes Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3AF8494225A362A40013DB5B /* Dudes Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AF8494D25A362A60013DB5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3ACE4B7825334484001AF0F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AF8494125A362A40013DB5B;
+			remoteInfo = "Dudes Stickers";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3AF8493625A362000013DB5B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3AF8494F25A362A60013DB5B /* Dudes Stickers.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3A0CA7F0255F2EB200AEB278 /* CVPixelBuffer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Helpers.swift"; sourceTree = "<group>"; };
+		3A0CA7F4255F2F7600AEB278 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		3A0CA7F7255F301300AEB278 /* CGImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		3A0D05C9254ED1B8002E5876 /* DudesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DudesViewController.swift; sourceTree = "<group>"; };
+		3A1906D3258FF91000D6EE9C /* Dudes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dudes.entitlements; sourceTree = "<group>"; };
+		3A1906D5258FF95000D6EE9C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		3A1F8D1A258E6DE700B78A42 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		3A2EF15825776E55003E9849 /* Dudes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dudes.xcdatamodel; sourceTree = "<group>"; };
+		3A453E2A258146FD00FA20C7 /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
+		3A453E3E2581777700FA20C7 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		3A4802AE257E0C01000E04B5 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		3A4F940825A13D9700CE3D23 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		3A4F940C25A1C7CE00CE3D23 /* DudesDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DudesDebug.entitlements; sourceTree = "<group>"; };
+		3A4F941225A1D3D900CE3D23 /* Legal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legal.swift; sourceTree = "<group>"; };
+		3A54F3FC2560E4980015C56A /* ShapeSkeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeSkeleton.swift; sourceTree = "<group>"; };
+		3A551B2A25663D310027684F /* EmotionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionModel.swift; sourceTree = "<group>"; };
+		3A5AA3C0257913DF00BDBD68 /* DudesGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DudesGenerator.swift; sourceTree = "<group>"; };
+		3A5AA3C62579179400BDBD68 /* dudes.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = dudes.mlmodel; sourceTree = "<group>"; };
+		3A5BDA76257FF1C7005FB1B7 /* PostRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequests.swift; sourceTree = "<group>"; };
+		3A603836258A8F7C00D648AD /* Dude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dude.swift; sourceTree = "<group>"; };
+		3A60383E258AA45B00D648AD /* StickerpacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerpacksViewController.swift; sourceTree = "<group>"; };
+		3A603842258AA49F00D648AD /* StickerpackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerpackViewController.swift; sourceTree = "<group>"; };
+		3A603846258AA7EE00D648AD /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		3A60384A258AB31400D648AD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		3A6F74F52577922E004DC417 /* DudeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DudeCell.swift; sourceTree = "<group>"; };
+		3A82B2AB2589029D008AEC06 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		3A82B2AF2589051E008AEC06 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		3A87DD2725483EE800057501 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		3A8E9C7E254F0203007E2329 /* CGPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtension.swift; sourceTree = "<group>"; };
+		3A93FE5F25491A1D00CE51FD /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		3AA2C52125A38F8100656D0D /* Stickerpack+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stickerpack+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3AA2C52225A38F8100656D0D /* Sticker+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sticker+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3AA2C52325A38F8100656D0D /* Stickerpack+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stickerpack+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3AA2C52425A38F8100656D0D /* Sticker+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sticker+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3AAA9575259B21450064A3A2 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3AAA9582259C7F300064A3A2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		3AAA958F259CD8C30064A3A2 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		3AAA9594259DA18B0064A3A2 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		3AB4FC30256355910050C898 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
+		3ABA0C202595BCCD003560FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3ABA0C232596C4CD003560FF /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		3ABA0C342596E89A003560FF /* DudesUnlimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DudesUnlimViewController.swift; sourceTree = "<group>"; };
+		3ACE4B8025334484001AF0F6 /* Dudes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dudes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ACE4B8325334484001AF0F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3ACE4B8525334484001AF0F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3ACE4B8A25334484001AF0F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3ACE4B8F25334485001AF0F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3ACE4B9425334485001AF0F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ACE4BA125334C36001AF0F6 /* DudesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DudesModel.swift; sourceTree = "<group>"; };
+		3AD7383C258D4A0500A6107C /* StickerpackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerpackCell.swift; sourceTree = "<group>"; };
+		3AD73840258D6D2200A6107C /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
+		3AD842512556F90900751D92 /* CGPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPathExtension.swift; sourceTree = "<group>"; };
+		3AD842542556F91900751D92 /* UIBezierPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtension.swift; sourceTree = "<group>"; };
+		3AD8425F25573F4700751D92 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		3AD84262255743AA00751D92 /* CGFloatPercentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatPercentage.swift; sourceTree = "<group>"; };
+		3ADB78C2257FD1B300F7C8FA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		3AE9D71925683A4C001E4F37 /* emotion_classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = emotion_classifier.mlmodel; sourceTree = "<group>"; };
+		3AE9D720256844C1001E4F37 /* SequenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension.swift; sourceTree = "<group>"; };
+		3AED8AD52589918C00EA08AE /* SpinnerIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerIndicator.swift; sourceTree = "<group>"; };
+		3AF8491D25A361560013DB5B /* Stickers.xcstickers */ = {isa = PBXFileReference; lastKnownFileType = folder.stickers; path = Stickers.xcstickers; sourceTree = "<group>"; };
+		3AF8492525A361FE0013DB5B /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		3AF8494225A362A40013DB5B /* Dudes Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Dudes Stickers.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF8494525A362A40013DB5B /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		3AF8494825A362A40013DB5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3AF8494A25A362A60013DB5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AF8494C25A362A60013DB5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF8495725A365FB0013DB5B /* Dudes StickersDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dudes StickersDebug.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3ACE4B7D25334484001AF0F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A1906D6258FF95000D6EE9C /* CloudKit.framework in Frameworks */,
+				3ABA0C212595BCCD003560FF /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF8493F25A362A40013DB5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF8494325A362A40013DB5B /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A0CA7EF255F2E9E00AEB278 /* CoreMLHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A0CA7F0255F2EB200AEB278 /* CVPixelBuffer+Helpers.swift */,
+				3A0CA7F4255F2F7600AEB278 /* UIImage+CVPixelBuffer.swift */,
+				3A0CA7F7255F301300AEB278 /* CGImage+CVPixelBuffer.swift */,
+			);
+			path = CoreMLHelpers;
+			sourceTree = "<group>";
+		};
+		3A6F74F1257789D1004DC417 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3AAA9594259DA18B0064A3A2 /* DeviceInfo.swift */,
+				3A54F3FC2560E4980015C56A /* ShapeSkeleton.swift */,
+				3A4802AE257E0C01000E04B5 /* Animations.swift */,
+				3A5BDA76257FF1C7005FB1B7 /* PostRequests.swift */,
+				3A453E2A258146FD00FA20C7 /* NetworkState.swift */,
+				3AED8AD52589918C00EA08AE /* SpinnerIndicator.swift */,
+				3ABA0C232596C4CD003560FF /* IAPManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3A87DD2625483EDB00057501 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3AD8425F25573F4700751D92 /* UIColor.swift */,
+				3A87DD2725483EE800057501 /* UIViewExtension.swift */,
+				3A93FE5F25491A1D00CE51FD /* UIImageExtension.swift */,
+				3A8E9C7E254F0203007E2329 /* CGPointExtension.swift */,
+				3AD842512556F90900751D92 /* CGPathExtension.swift */,
+				3AD842542556F91900751D92 /* UIBezierPathExtension.swift */,
+				3AD84262255743AA00751D92 /* CGFloatPercentage.swift */,
+				3AB4FC30256355910050C898 /* CVPixelBufferExtension.swift */,
+				3AE9D720256844C1001E4F37 /* SequenceExtension.swift */,
+				3ADB78C2257FD1B300F7C8FA /* StringExtension.swift */,
+				3A453E3E2581777700FA20C7 /* UIButtonExtension.swift */,
+				3A603846258AA7EE00D648AD /* DateExtension.swift */,
+				3A60384A258AB31400D648AD /* UIViewControllerExtension.swift */,
+				3AD73840258D6D2200A6107C /* UIStackViewExtension.swift */,
+				3A1F8D1A258E6DE700B78A42 /* UICollectionViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3AA2C52025A38F7000656D0D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3AA2C52225A38F8100656D0D /* Sticker+CoreDataClass.swift */,
+				3AA2C52425A38F8100656D0D /* Sticker+CoreDataProperties.swift */,
+				3AA2C52125A38F8100656D0D /* Stickerpack+CoreDataClass.swift */,
+				3AA2C52325A38F8100656D0D /* Stickerpack+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		3ACE4B7725334484001AF0F6 = {
+			isa = PBXGroup;
+			children = (
+				3ACE4B8225334484001AF0F6 /* Dudes */,
+				3AF8494425A362A40013DB5B /* Dudes Stickers */,
+				3ACE4B8125334484001AF0F6 /* Products */,
+				F90180952E679FC11508A91C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3ACE4B8125334484001AF0F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3ACE4B8025334484001AF0F6 /* Dudes.app */,
+				3AF8494225A362A40013DB5B /* Dudes Stickers.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3ACE4B8225334484001AF0F6 /* Dudes */ = {
+			isa = PBXGroup;
+			children = (
+				3AA2C52025A38F7000656D0D /* CoreData */,
+				3A6F74F1257789D1004DC417 /* Helpers */,
+				3A87DD2625483EDB00057501 /* Extensions */,
+				3A0CA7EF255F2E9E00AEB278 /* CoreMLHelpers */,
+				3ACE4C102533A43B001AF0F6 /* CoreMLModels */,
+				3A4F941225A1D3D900CE3D23 /* Legal.swift */,
+				3AAA9582259C7F300064A3A2 /* AboutViewController.swift */,
+				3A4F940825A13D9700CE3D23 /* SubscriptionViewController.swift */,
+				3ABA0C342596E89A003560FF /* DudesUnlimViewController.swift */,
+				3AAA9575259B21450064A3A2 /* MenuViewController.swift */,
+				3AAA958F259CD8C30064A3A2 /* Menu.swift */,
+				3A60383E258AA45B00D648AD /* StickerpacksViewController.swift */,
+				3A603842258AA49F00D648AD /* StickerpackViewController.swift */,
+				3AD7383C258D4A0500A6107C /* StickerpackCell.swift */,
+				3A0D05C9254ED1B8002E5876 /* DudesViewController.swift */,
+				3A5AA3C0257913DF00BDBD68 /* DudesGenerator.swift */,
+				3A6F74F52577922E004DC417 /* DudeCell.swift */,
+				3A603836258A8F7C00D648AD /* Dude.swift */,
+				3A82B2AB2589029D008AEC06 /* FilterCell.swift */,
+				3A82B2AF2589051E008AEC06 /* Filter.swift */,
+				3ACE4B8325334484001AF0F6 /* AppDelegate.swift */,
+				3ACE4B8525334484001AF0F6 /* SceneDelegate.swift */,
+				3ACE4B8925334484001AF0F6 /* Main.storyboard */,
+				3ACE4B9425334485001AF0F6 /* Info.plist */,
+				3A1906D3258FF91000D6EE9C /* Dudes.entitlements */,
+				3A4F940C25A1C7CE00CE3D23 /* DudesDebug.entitlements */,
+				3A2EF15725776E55003E9849 /* Dudes.xcdatamodeld */,
+				3ACE4B8F25334485001AF0F6 /* Assets.xcassets */,
+				3AF8491D25A361560013DB5B /* Stickers.xcstickers */,
+			);
+			path = Dudes;
+			sourceTree = "<group>";
+		};
+		3ACE4C102533A43B001AF0F6 /* CoreMLModels */ = {
+			isa = PBXGroup;
+			children = (
+				3ACE4BA125334C36001AF0F6 /* DudesModel.swift */,
+				3A5AA3C62579179400BDBD68 /* dudes.mlmodel */,
+				3A551B2A25663D310027684F /* EmotionModel.swift */,
+				3AE9D71925683A4C001E4F37 /* emotion_classifier.mlmodel */,
+			);
+			path = CoreMLModels;
+			sourceTree = "<group>";
+		};
+		3AF8494425A362A40013DB5B /* Dudes Stickers */ = {
+			isa = PBXGroup;
+			children = (
+				3AF8495725A365FB0013DB5B /* Dudes StickersDebug.entitlements */,
+				3AF8494525A362A40013DB5B /* MessagesViewController.swift */,
+				3AF8494725A362A40013DB5B /* MainInterface.storyboard */,
+				3AF8494A25A362A60013DB5B /* Assets.xcassets */,
+				3AF8494C25A362A60013DB5B /* Info.plist */,
+			);
+			path = "Dudes Stickers";
+			sourceTree = "<group>";
+		};
+		F90180952E679FC11508A91C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA0C202595BCCD003560FF /* StoreKit.framework */,
+				3A1906D5258FF95000D6EE9C /* CloudKit.framework */,
+				3AF8492525A361FE0013DB5B /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3ACE4B7F25334484001AF0F6 /* Dudes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ACE4B9725334485001AF0F6 /* Build configuration list for PBXNativeTarget "Dudes" */;
+			buildPhases = (
+				3ACE4B7C25334484001AF0F6 /* Sources */,
+				3ACE4B7D25334484001AF0F6 /* Frameworks */,
+				3ACE4B7E25334484001AF0F6 /* Resources */,
+				3AF8493625A362000013DB5B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AF8494E25A362A60013DB5B /* PBXTargetDependency */,
+			);
+			name = Dudes;
+			packageProductDependencies = (
+			);
+			productName = AbstractFace;
+			productReference = 3ACE4B8025334484001AF0F6 /* Dudes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3AF8494125A362A40013DB5B /* Dudes Stickers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AF8495025A362A60013DB5B /* Build configuration list for PBXNativeTarget "Dudes Stickers" */;
+			buildPhases = (
+				3AF8493E25A362A40013DB5B /* Sources */,
+				3AF8493F25A362A40013DB5B /* Frameworks */,
+				3AF8494025A362A40013DB5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dudes Stickers";
+			productName = "Dudes Stickers";
+			productReference = 3AF8494225A362A40013DB5B /* Dudes Stickers.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3ACE4B7825334484001AF0F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					3ACE4B7F25334484001AF0F6 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					3AF8494125A362A40013DB5B = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 3ACE4B7B25334484001AF0F6 /* Build configuration list for PBXProject "Dudes" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3ACE4B7725334484001AF0F6;
+			packageReferences = (
+			);
+			productRefGroup = 3ACE4B8125334484001AF0F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3ACE4B7F25334484001AF0F6 /* Dudes */,
+				3AF8494125A362A40013DB5B /* Dudes Stickers */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3ACE4B7E25334484001AF0F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ACE4B9025334485001AF0F6 /* Assets.xcassets in Resources */,
+				3ACE4B8B25334484001AF0F6 /* Main.storyboard in Resources */,
+				3AF8491E25A361560013DB5B /* Stickers.xcstickers in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF8494025A362A40013DB5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF8494B25A362A60013DB5B /* Assets.xcassets in Resources */,
+				3AF8494925A362A40013DB5B /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3ACE4B7C25334484001AF0F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AAA9576259B21450064A3A2 /* MenuViewController.swift in Sources */,
+				3A6F74F62577922E004DC417 /* DudeCell.swift in Sources */,
+				3AB4FC31256355910050C898 /* CVPixelBufferExtension.swift in Sources */,
+				3A2EF15925776E55003E9849 /* Dudes.xcdatamodeld in Sources */,
+				3A0D05CA254ED1B8002E5876 /* DudesViewController.swift in Sources */,
+				3A603843258AA49F00D648AD /* StickerpackViewController.swift in Sources */,
+				3ABA0C352596E89A003560FF /* DudesUnlimViewController.swift in Sources */,
+				3A603847258AA7EE00D648AD /* DateExtension.swift in Sources */,
+				3AD842522556F90900751D92 /* CGPathExtension.swift in Sources */,
+				3A54F3FD2560E4980015C56A /* ShapeSkeleton.swift in Sources */,
+				3A8E9C7F254F0203007E2329 /* CGPointExtension.swift in Sources */,
+				3ADB78C3257FD1B300F7C8FA /* StringExtension.swift in Sources */,
+				3AAA9590259CD8C30064A3A2 /* Menu.swift in Sources */,
+				3A82B2AC2589029D008AEC06 /* FilterCell.swift in Sources */,
+				3ABA0C242596C4CD003560FF /* IAPManager.swift in Sources */,
+				3ACE4BA225334C36001AF0F6 /* DudesModel.swift in Sources */,
+				3A0CA7F1255F2EB200AEB278 /* CVPixelBuffer+Helpers.swift in Sources */,
+				3A453E2B258146FD00FA20C7 /* NetworkState.swift in Sources */,
+				3AD842552556F91900751D92 /* UIBezierPathExtension.swift in Sources */,
+				3A82B2B02589051E008AEC06 /* Filter.swift in Sources */,
+				3AD73841258D6D2200A6107C /* UIStackViewExtension.swift in Sources */,
+				3AE9D71A25683A4C001E4F37 /* emotion_classifier.mlmodel in Sources */,
+				3A93FE6025491A1D00CE51FD /* UIImageExtension.swift in Sources */,
+				3A87DD2925483EE800057501 /* UIViewExtension.swift in Sources */,
+				3A60383F258AA45B00D648AD /* StickerpacksViewController.swift in Sources */,
+				3AD7383D258D4A0500A6107C /* StickerpackCell.swift in Sources */,
+				3ACE4B8425334484001AF0F6 /* AppDelegate.swift in Sources */,
+				3AAA9595259DA18B0064A3A2 /* DeviceInfo.swift in Sources */,
+				3A5AA3C72579179400BDBD68 /* dudes.mlmodel in Sources */,
+				3AD8426025573F4700751D92 /* UIColor.swift in Sources */,
+				3AA2C52725A38F8100656D0D /* Stickerpack+CoreDataProperties.swift in Sources */,
+				3AAA9583259C7F300064A3A2 /* AboutViewController.swift in Sources */,
+				3A603837258A8F7C00D648AD /* Dude.swift in Sources */,
+				3A4F941325A1D3D900CE3D23 /* Legal.swift in Sources */,
+				3A453E3F2581777700FA20C7 /* UIButtonExtension.swift in Sources */,
+				3AA2C52525A38F8100656D0D /* Stickerpack+CoreDataClass.swift in Sources */,
+				3A0CA7F8255F301300AEB278 /* CGImage+CVPixelBuffer.swift in Sources */,
+				3AA2C52625A38F8100656D0D /* Sticker+CoreDataClass.swift in Sources */,
+				3A1F8D1B258E6DE700B78A42 /* UICollectionViewExtension.swift in Sources */,
+				3AE9D721256844C1001E4F37 /* SequenceExtension.swift in Sources */,
+				3A551B2B25663D310027684F /* EmotionModel.swift in Sources */,
+				3A4802AF257E0C01000E04B5 /* Animations.swift in Sources */,
+				3A0CA7F5255F2F7600AEB278 /* UIImage+CVPixelBuffer.swift in Sources */,
+				3A5AA3C1257913DF00BDBD68 /* DudesGenerator.swift in Sources */,
+				3A5BDA77257FF1C7005FB1B7 /* PostRequests.swift in Sources */,
+				3A60384B258AB31400D648AD /* UIViewControllerExtension.swift in Sources */,
+				3AED8AD62589918C00EA08AE /* SpinnerIndicator.swift in Sources */,
+				3AD84263255743AA00751D92 /* CGFloatPercentage.swift in Sources */,
+				3AA2C52825A38F8100656D0D /* Sticker+CoreDataProperties.swift in Sources */,
+				3A4F940925A13D9700CE3D23 /* SubscriptionViewController.swift in Sources */,
+				3ACE4B8625334484001AF0F6 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF8493E25A362A40013DB5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AF8494625A362A40013DB5B /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AF8494E25A362A60013DB5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AF8494125A362A40013DB5B /* Dudes Stickers */;
+			targetProxy = 3AF8494D25A362A60013DB5B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3ACE4B8925334484001AF0F6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ACE4B8A25334484001AF0F6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3AF8494725A362A40013DB5B /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AF8494825A362A40013DB5B /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3ACE4B9525334485001AF0F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3ACE4B9625334485001AF0F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3ACE4B9825334485001AF0F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Dudes/DudesDebug.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = NNR45DX7YX;
+				INFOPLIST_FILE = Dudes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.getdudesapp.Dudes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3ACE4B9925334485001AF0F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Dudes/Dudes.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = NNR45DX7YX;
+				INFOPLIST_FILE = Dudes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.getdudesapp.Dudes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3AF8495125A362A60013DB5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "Dudes Stickers/Dudes StickersDebug.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NNR45DX7YX;
+				INFOPLIST_FILE = "Dudes Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getdudesapp.Dudes.Dudes-Stickers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3AF8495225A362A60013DB5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NNR45DX7YX;
+				INFOPLIST_FILE = "Dudes Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getdudesapp.Dudes.Dudes-Stickers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3ACE4B7B25334484001AF0F6 /* Build configuration list for PBXProject "Dudes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ACE4B9525334485001AF0F6 /* Debug */,
+				3ACE4B9625334485001AF0F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ACE4B9725334485001AF0F6 /* Build configuration list for PBXNativeTarget "Dudes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ACE4B9825334485001AF0F6 /* Debug */,
+				3ACE4B9925334485001AF0F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AF8495025A362A60013DB5B /* Build configuration list for PBXNativeTarget "Dudes Stickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AF8495125A362A60013DB5B /* Debug */,
+				3AF8495225A362A60013DB5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A2EF15725776E55003E9849 /* Dudes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A2EF15825776E55003E9849 /* Dudes.xcdatamodel */,
+			);
+			currentVersion = 3A2EF15825776E55003E9849 /* Dudes.xcdatamodel */;
+			path = Dudes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3ACE4B7825334484001AF0F6 /* Project object */;
+}
