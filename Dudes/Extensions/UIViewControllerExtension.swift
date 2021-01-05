@@ -68,34 +68,11 @@ extension UIViewController {
 extension UIViewController {
 
     func shareImages(_ images: [UIImage]) {
-        if !NetworkState.isConnectedToNetwork() {
-            self.showAlert("No internet connection")
-        } else {
-            self.showSpinner()
-            IAPManager.shared.isSubscriptionActive { [self] active in
-                DispatchQueue.main.async {
-                    self.removeSpinner()
-                    if active {
-                        let pngImages = images.map { $0.getPng() }
-                        let activityViewController = UIActivityViewController(activityItems: pngImages, applicationActivities: nil)
-                        activityViewController.popoverPresentationController?.sourceView = self.view
-                        self.present(activityViewController, animated: true, completion: nil)
-                    } else {
-                        showDudesUnlimViewController()
-                    }
-                }
-            }
-        }
+        let pngImages = images.map { $0.getPng() }
+        let activityViewController = UIActivityViewController(activityItems: pngImages, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
 }
 
 
-extension UIViewController {
-    func showDudesUnlimViewController() {
-        DispatchQueue.main.async() {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "DudesUnlimViewController") as! DudesUnlimViewController
-            vc.modalPresentationStyle = .fullScreen
-            self.navigationController?.present(vc, animated: true, completion: nil)
-        }
-    }
-}

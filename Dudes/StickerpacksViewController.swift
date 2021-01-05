@@ -35,10 +35,6 @@ class StickerpacksViewController: UIViewController, UICollectionViewDelegate {
         fetchStickerpacksData()
         configureHierarchy()
         configureDataSource()
-        
-        let defaults = UserDefaults(suiteName: "group.com.getdudesapp.Dudes.container")
-        defaults?.set(String.random(), forKey: "randomString")
-        defaults?.synchronize()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +48,7 @@ class StickerpacksViewController: UIViewController, UICollectionViewDelegate {
     }
     
     @objc func showAppViewControler() {
-        self.performSegue(withIdentifier: "MenuViewController", sender: (Any).self)
+        self.performSegue(withIdentifier: "AboutViewController", sender: (Any).self)
     }
 }
 

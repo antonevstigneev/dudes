@@ -7,27 +7,63 @@
 
 import UIKit
 import Messages
+import Foundation
 import CoreData
 
 
-class MessagesViewController: MSMessagesAppViewController {
+class MessagesViewController: MSMessagesAppViewController, UICollectionViewDelegate {
+    
+    let userDefaults = UserDefaults(suiteName: "group.com.getdudesapp.Dudes.container")!
+    let container = CoreDataStack.persistentContainer
+    var dudesCollectionView: UICollectionView!
+    var dudesDataSource: UICollectionViewDiffableDataSource<Section, MSSticker>!
+    var dudesSnapshot: NSDiffableDataSourceSnapshot<Section, MSSticker>!
+    var filtersCollectionView: UICollectionView!
+    var filtersDataSource: UICollectionViewDiffableDataSource<Int, Int>!
+    
+    var stickerpacks: [Stickerpack] = []
+    var stickers: [MSSticker] = []
+    
+    enum Section {
+        case stickers
+    }
+    
+    @IBOutlet weak var filtersView: UIView!
+    @IBOutlet weak var dudePreview: UIImageView!
+    var stickersCollectionView: UICollectionView!
+    var stickersDataSource: UICollectionViewDiffableDataSource<Section, StickerCell>!
+    var stickersSnapshot: NSDiffableDataSourceSnapshot<Section, StickerCell>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        if let fileManager = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.getdudesapp.Dudes.container")
-        {
-             print(fileManager)
-        }
-        let defaults = UserDefaults(suiteName: "group.com.getdudesapp.Dudes.container")
-        defaults?.synchronize()
-
-        // Check for null value before setting
-        if let restoredValue = defaults!.string(forKey: "randomString") {
-            print(restoredValue)
-        }
-        else {
-            print(("Cannot find value"))
+        fetchStickerpacksData()
+        configureHierarchy()
+        configureDataSource()
+    }
+    
+    func fetchStickerpacksData() {
+        let request: NSFetchRequest = Stickerpack.fetchRequest()
+        request.relationshipKeyPathsForPrefetching = ["stickers"]
+        let sort = NSSortDescriptor(key: "timestamp", ascending: false)
+        request.sortDescriptors = [sort]
+        do {
+            stickerpacks = try container.viewContext.fetch(request)
+            
+            for stickerpack in stickerpacks {
+                for case let sticker as Sticker in stickerpack.stickers!  {
+                    
+                    let path = "\(stickerpack.id!)/\(sticker.id!).png"
+                    let fileManager = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.getdudesapp.Dudes.container")
+                    guard   let img = UIImage(data: sticker.image!),
+                            let url = img.save(at: fileManager!,
+                                               pathAndImageName: path) else { return }
+                    
+                    let sticker = try! MSSticker(contentsOfFileURL: url, localizedDescription: "sticker")
+                    stickers.append(sticker)
+                }
+            }
+        } catch {
+            print("Fetching failed")
         }
     }
     
@@ -79,4 +115,133 @@ class MessagesViewController: MSMessagesAppViewController {
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
 
+}
+
+/// MARK: - CollectionView layout
+extension MessagesViewController {
+    func createDudesLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(120),
+                                             heightDimension: .absolute(120))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .absolute(120))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
+        let spacing = CGFloat(10)
+        group.interItemSpacing = .fixed(spacing)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = spacing
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 10, bottom: 0, trailing: 10)
+  
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+}
+
+
+
+// MARK: - CollectionView dataSource
+extension MessagesViewController {
+    func configureHierarchy() {
+        dudesCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout: createDudesLayout())
+        dudesCollectionView.delegate = self
+        dudesCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        dudesCollectionView.backgroundColor = .black
+        dudesCollectionView.allowsMultipleSelection = true
+        dudesCollectionView.showsVerticalScrollIndicator = false
+        view.addSubview(dudesCollectionView)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.estimatedItemSize = CGSize(width: 80, height: 35)
+        let frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 35)
+        filtersCollectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        filtersCollectionView.delegate = self
+        filtersCollectionView.contentInset = UIEdgeInsets(top: 12, left: 25, bottom: 0, right: 25)
+        filtersCollectionView.showsHorizontalScrollIndicator = false
+        filtersView.addSubview(filtersCollectionView)
+        view.bringSubviewToFront(filtersView)
+    }
+    
+    func configureDataSource() {
+        let dudeCellRegistration = UICollectionView.CellRegistration
+        <StickerCell, MSSticker> { (cell, indexPath, sticker) in
+            cell.stickerView.sticker = self.stickers[indexPath.row]
+        }
+        
+        dudesDataSource = UICollectionViewDiffableDataSource<Section, MSSticker>(collectionView: dudesCollectionView) {
+            (collectionView: UICollectionView, indexPath: IndexPath, identifier: MSSticker) -> UICollectionViewCell? in
+            
+            return collectionView.dequeueConfiguredReusableCell(using: dudeCellRegistration, for: indexPath, item: identifier)
+        }
+        
+        let filterCellRegistration  = UICollectionView.CellRegistration
+        <FilterCell, Int> { (cell, indexPath, identifier) in
+            let stickerpackTitle = "DUDES " + String(format: "%02d", self.stickerpacks.count - indexPath.row)
+            cell.label.text = stickerpackTitle
+        }
+        
+        filtersDataSource = UICollectionViewDiffableDataSource<Int, Int>(collectionView: filtersCollectionView) {
+            (collectionView: UICollectionView, indexPath: IndexPath, identifier: Int) -> UICollectionViewCell? in
+            
+            return collectionView.dequeueConfiguredReusableCell(using: filterCellRegistration, for: indexPath, item: identifier)
+        }
+
+        // dudes initial data
+        applyDataSnapshot()
+        
+        // filters initial data
+        var filtersSnapshot = NSDiffableDataSourceSnapshot<Int, Int>()
+        filtersSnapshot.appendSections([0])
+        filtersSnapshot.appendItems(Array(0..<stickerpacks.count))
+        filtersDataSource.apply(filtersSnapshot, animatingDifferences: false)
+    }
+    
+    private func applyDataSnapshot() {
+        DispatchQueue.main.async() { [self] in
+            dudesSnapshot = NSDiffableDataSourceSnapshot<Section, MSSticker>()
+            dudesSnapshot.appendSections([.stickers])
+            dudesSnapshot.appendItems(stickers)
+            dudesDataSource.apply(dudesSnapshot, animatingDifferences: true)
+        }
+    }
+}
+
+
+
+// save
+extension UIImage {
+
+    func save(at directory: URL,
+              pathAndImageName: String,
+              createSubdirectoriesIfNeed: Bool = true,
+              compressionQuality: CGFloat = 1.0)  -> URL? {
+        do {
+        
+        return save(at: directory.appendingPathComponent(pathAndImageName),
+                    createSubdirectoriesIfNeed: createSubdirectoriesIfNeed,
+                    compressionQuality: compressionQuality)
+        } catch {
+            print("-- Error: \(error)")
+            return nil
+        }
+    }
+
+    func save(at url: URL,
+              createSubdirectoriesIfNeed: Bool = true,
+              compressionQuality: CGFloat = 1.0)  -> URL? {
+        do {
+            if createSubdirectoriesIfNeed {
+                try FileManager.default.createDirectory(at: url.deletingLastPathComponent(),
+                                                        withIntermediateDirectories: true,
+                                                        attributes: nil)
+            }
+            guard let data = pngData() else { return nil }
+            try data.write(to: url)
+            return url
+        } catch {
+            print("-- Error: \(error)")
+            return nil
+        }
+    }
 }

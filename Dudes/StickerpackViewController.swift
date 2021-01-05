@@ -7,6 +7,10 @@
 
 import UIKit
 import CoreData
+import Foundation
+import Messages
+import MessageUI
+
 
 class StickerpackViewController: UIViewController, UICollectionViewDelegate {
     
@@ -29,13 +33,23 @@ class StickerpackViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var exportStickerpackButton: UIButton!
     @IBOutlet weak var updateStickerpackButton: UIButton!
     @IBAction func sendStickerpackRequest(_ sender: UIButton) {
-        print("test")
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        // TODO:
+        // Add iMessage sharing button
+        // save image (way 1)
+        let path = "temp/img.png"
+        let fileManager = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.getdudesapp.Dudes.container")
+        guard   let img = UIImage(data: dudes[0].image),
+                let url = img.save(at: fileManager!,
+                                   pathAndImageName: path) else { return }
+        print(url)
+        print(url)
+        print(url)
         
-        guard let url: URL = URL(string: "?app=messages") else { return }
-
-        self.extensionContext?.open(url, completionHandler: { (success: Bool) in
-
-         })
+        let userDefaults = UserDefaults(suiteName: "group.com.getdudesapp.Dudes.container")!
+        userDefaults.set(url, forKey: "imageUrl")
+        userDefaults.synchronize()
+    
         
 //        // TELEGRAM EXPORT METHOD
 //        let action = sender.accessibilityIdentifier!
@@ -43,14 +57,7 @@ class StickerpackViewController: UIViewController, UICollectionViewDelegate {
 //            self.showAlert("No internet connection")
 //        } else {
 //            self.showSpinner()
-//            IAPManager.shared.isSubscriptionActive { [self] active in
-//                if active {
-//                    processStickerpackData(with: action)
-//                } else {
-//                    self.removeSpinner()
-//                    showDudesUnlimViewController()
-//                }
-//            }
+//            processStickerpackData(with: action)
 //        }
     }
     
@@ -64,6 +71,7 @@ class StickerpackViewController: UIViewController, UICollectionViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         setupNavigationItems()
     }
+    
     
     @objc func showEditMenu() {
         navigationItem.title = "0 SELECTED"

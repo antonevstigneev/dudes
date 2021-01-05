@@ -15,15 +15,43 @@
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQe-OD-dKq">
+                                <rect key="frame" x="60" y="164" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="4Bo-5c-DWT"/>
+                                    <constraint firstAttribute="height" constant="200" id="ZZW-hn-9nK"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJv-uc-Xh0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="NNF-je-ff2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kJv-uc-Xh0" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="506-GH-HCo"/>
+                            <constraint firstItem="KQe-OD-dKq" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="Q2w-Es-puv"/>
+                            <constraint firstItem="kJv-uc-Xh0" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" id="R2s-gt-ZI7"/>
+                            <constraint firstAttribute="trailing" secondItem="kJv-uc-Xh0" secondAttribute="trailing" id="dum-qu-fyH"/>
+                            <constraint firstItem="kJv-uc-Xh0" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="eUy-Cm-P9v"/>
+                            <constraint firstItem="KQe-OD-dKq" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" id="rxI-0z-Y9H"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="dudePreview" destination="KQe-OD-dKq" id="bqh-fC-rLV"/>
+                        <outlet property="filtersView" destination="kJv-uc-Xh0" id="CKF-UK-4FE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="116"/>
+            <point key="canvasLocation" x="73.913043478260875" y="115.84821428571428"/>
         </scene>
     </scenes>
     <resources>

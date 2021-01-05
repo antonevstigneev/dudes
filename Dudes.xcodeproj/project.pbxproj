@@ -17,7 +17,6 @@
 		3A453E2B258146FD00FA20C7 /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453E2A258146FD00FA20C7 /* NetworkState.swift */; };
 		3A453E3F2581777700FA20C7 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453E3E2581777700FA20C7 /* UIButtonExtension.swift */; };
 		3A4802AF257E0C01000E04B5 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4802AE257E0C01000E04B5 /* Animations.swift */; };
-		3A4F940925A13D9700CE3D23 /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F940825A13D9700CE3D23 /* SubscriptionViewController.swift */; };
 		3A4F941325A1D3D900CE3D23 /* Legal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F941225A1D3D900CE3D23 /* Legal.swift */; };
 		3A54F3FD2560E4980015C56A /* ShapeSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54F3FC2560E4980015C56A /* ShapeSkeleton.swift */; };
 		3A551B2B25663D310027684F /* EmotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A551B2A25663D310027684F /* EmotionModel.swift */; };
@@ -30,6 +29,14 @@
 		3A603847258AA7EE00D648AD /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A603846258AA7EE00D648AD /* DateExtension.swift */; };
 		3A60384B258AB31400D648AD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60384A258AB31400D648AD /* UIViewControllerExtension.swift */; };
 		3A6F74F62577922E004DC417 /* DudeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F74F52577922E004DC417 /* DudeCell.swift */; };
+		3A7846CE25A472060058A754 /* StickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7846CD25A472060058A754 /* StickerCell.swift */; };
+		3A7846EC25A481280058A754 /* Dudes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EF15725776E55003E9849 /* Dudes.xcdatamodeld */; };
+		3A7846F125A487560058A754 /* Sticker+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52225A38F8100656D0D /* Sticker+CoreDataClass.swift */; };
+		3A7846F225A487560058A754 /* Stickerpack+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52325A38F8100656D0D /* Stickerpack+CoreDataProperties.swift */; };
+		3A7846F325A487560058A754 /* Stickerpack+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52125A38F8100656D0D /* Stickerpack+CoreDataClass.swift */; };
+		3A7846F425A487560058A754 /* Sticker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52425A38F8100656D0D /* Sticker+CoreDataProperties.swift */; };
+		3A78470225A48C4C0058A754 /* CoreStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78470125A48C4C0058A754 /* CoreStack.swift */; };
+		3A78470B25A4AD220058A754 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A78470A25A4AD220058A754 /* FilterCell.swift */; };
 		3A82B2AC2589029D008AEC06 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A82B2AB2589029D008AEC06 /* FilterCell.swift */; };
 		3A82B2B02589051E008AEC06 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A82B2AF2589051E008AEC06 /* Filter.swift */; };
 		3A87DD2925483EE800057501 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A87DD2725483EE800057501 /* UIViewExtension.swift */; };
@@ -39,14 +46,10 @@
 		3AA2C52625A38F8100656D0D /* Sticker+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52225A38F8100656D0D /* Sticker+CoreDataClass.swift */; };
 		3AA2C52725A38F8100656D0D /* Stickerpack+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52325A38F8100656D0D /* Stickerpack+CoreDataProperties.swift */; };
 		3AA2C52825A38F8100656D0D /* Sticker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52425A38F8100656D0D /* Sticker+CoreDataProperties.swift */; };
-		3AAA9576259B21450064A3A2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA9575259B21450064A3A2 /* MenuViewController.swift */; };
 		3AAA9583259C7F300064A3A2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA9582259C7F300064A3A2 /* AboutViewController.swift */; };
-		3AAA9590259CD8C30064A3A2 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA958F259CD8C30064A3A2 /* Menu.swift */; };
 		3AAA9595259DA18B0064A3A2 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA9594259DA18B0064A3A2 /* DeviceInfo.swift */; };
 		3AB4FC31256355910050C898 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4FC30256355910050C898 /* CVPixelBufferExtension.swift */; };
 		3ABA0C212595BCCD003560FF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABA0C202595BCCD003560FF /* StoreKit.framework */; };
-		3ABA0C242596C4CD003560FF /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA0C232596C4CD003560FF /* IAPManager.swift */; };
-		3ABA0C352596E89A003560FF /* DudesUnlimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA0C342596E89A003560FF /* DudesUnlimViewController.swift */; };
 		3ACE4B8425334484001AF0F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE4B8325334484001AF0F6 /* AppDelegate.swift */; };
 		3ACE4B8625334484001AF0F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE4B8525334484001AF0F6 /* SceneDelegate.swift */; };
 		3ACE4B8B25334484001AF0F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE4B8925334484001AF0F6 /* Main.storyboard */; };
@@ -62,7 +65,6 @@
 		3AE9D71A25683A4C001E4F37 /* emotion_classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9D71925683A4C001E4F37 /* emotion_classifier.mlmodel */; };
 		3AE9D721256844C1001E4F37 /* SequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE9D720256844C1001E4F37 /* SequenceExtension.swift */; };
 		3AED8AD62589918C00EA08AE /* SpinnerIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED8AD52589918C00EA08AE /* SpinnerIndicator.swift */; };
-		3AF8491E25A361560013DB5B /* Stickers.xcstickers in Resources */ = {isa = PBXBuildFile; fileRef = 3AF8491D25A361560013DB5B /* Stickers.xcstickers */; };
 		3AF8494325A362A40013DB5B /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF8492525A361FE0013DB5B /* Messages.framework */; };
 		3AF8494625A362A40013DB5B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF8494525A362A40013DB5B /* MessagesViewController.swift */; };
 		3AF8494925A362A40013DB5B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF8494725A362A40013DB5B /* MainInterface.storyboard */; };
@@ -106,7 +108,6 @@
 		3A453E2A258146FD00FA20C7 /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
 		3A453E3E2581777700FA20C7 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		3A4802AE257E0C01000E04B5 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
-		3A4F940825A13D9700CE3D23 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		3A4F940C25A1C7CE00CE3D23 /* DudesDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DudesDebug.entitlements; sourceTree = "<group>"; };
 		3A4F941225A1D3D900CE3D23 /* Legal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legal.swift; sourceTree = "<group>"; };
 		3A54F3FC2560E4980015C56A /* ShapeSkeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeSkeleton.swift; sourceTree = "<group>"; };
@@ -120,6 +121,10 @@
 		3A603846258AA7EE00D648AD /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		3A60384A258AB31400D648AD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		3A6F74F52577922E004DC417 /* DudeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DudeCell.swift; sourceTree = "<group>"; };
+		3A7846CD25A472060058A754 /* StickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerCell.swift; sourceTree = "<group>"; };
+		3A7846FE25A48BC30058A754 /* Dudes StickersDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dudes StickersDebug.entitlements"; sourceTree = "<group>"; };
+		3A78470125A48C4C0058A754 /* CoreStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreStack.swift; sourceTree = "<group>"; };
+		3A78470A25A4AD220058A754 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		3A82B2AB2589029D008AEC06 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		3A82B2AF2589051E008AEC06 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		3A87DD2725483EE800057501 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -129,14 +134,10 @@
 		3AA2C52225A38F8100656D0D /* Sticker+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sticker+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3AA2C52325A38F8100656D0D /* Stickerpack+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stickerpack+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3AA2C52425A38F8100656D0D /* Sticker+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sticker+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3AAA9575259B21450064A3A2 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3AAA9582259C7F300064A3A2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		3AAA958F259CD8C30064A3A2 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		3AAA9594259DA18B0064A3A2 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		3AB4FC30256355910050C898 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
 		3ABA0C202595BCCD003560FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		3ABA0C232596C4CD003560FF /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
-		3ABA0C342596E89A003560FF /* DudesUnlimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DudesUnlimViewController.swift; sourceTree = "<group>"; };
 		3ACE4B8025334484001AF0F6 /* Dudes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dudes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ACE4B8325334484001AF0F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ACE4B8525334484001AF0F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,14 +155,12 @@
 		3AE9D71925683A4C001E4F37 /* emotion_classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = emotion_classifier.mlmodel; sourceTree = "<group>"; };
 		3AE9D720256844C1001E4F37 /* SequenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension.swift; sourceTree = "<group>"; };
 		3AED8AD52589918C00EA08AE /* SpinnerIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerIndicator.swift; sourceTree = "<group>"; };
-		3AF8491D25A361560013DB5B /* Stickers.xcstickers */ = {isa = PBXFileReference; lastKnownFileType = folder.stickers; path = Stickers.xcstickers; sourceTree = "<group>"; };
 		3AF8492525A361FE0013DB5B /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		3AF8494225A362A40013DB5B /* Dudes Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Dudes Stickers.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF8494525A362A40013DB5B /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		3AF8494825A362A40013DB5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		3AF8494A25A362A60013DB5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AF8494C25A362A60013DB5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AF8495725A365FB0013DB5B /* Dudes StickersDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dudes StickersDebug.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +203,6 @@
 				3A5BDA76257FF1C7005FB1B7 /* PostRequests.swift */,
 				3A453E2A258146FD00FA20C7 /* NetworkState.swift */,
 				3AED8AD52589918C00EA08AE /* SpinnerIndicator.swift */,
-				3ABA0C232596C4CD003560FF /* IAPManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -264,17 +262,12 @@
 		3ACE4B8225334484001AF0F6 /* Dudes */ = {
 			isa = PBXGroup;
 			children = (
-				3AA2C52025A38F7000656D0D /* CoreData */,
 				3A6F74F1257789D1004DC417 /* Helpers */,
 				3A87DD2625483EDB00057501 /* Extensions */,
 				3A0CA7EF255F2E9E00AEB278 /* CoreMLHelpers */,
 				3ACE4C102533A43B001AF0F6 /* CoreMLModels */,
-				3A4F941225A1D3D900CE3D23 /* Legal.swift */,
+				3AA2C52025A38F7000656D0D /* CoreData */,
 				3AAA9582259C7F300064A3A2 /* AboutViewController.swift */,
-				3A4F940825A13D9700CE3D23 /* SubscriptionViewController.swift */,
-				3ABA0C342596E89A003560FF /* DudesUnlimViewController.swift */,
-				3AAA9575259B21450064A3A2 /* MenuViewController.swift */,
-				3AAA958F259CD8C30064A3A2 /* Menu.swift */,
 				3A60383E258AA45B00D648AD /* StickerpacksViewController.swift */,
 				3A603842258AA49F00D648AD /* StickerpackViewController.swift */,
 				3AD7383C258D4A0500A6107C /* StickerpackCell.swift */,
@@ -284,6 +277,7 @@
 				3A603836258A8F7C00D648AD /* Dude.swift */,
 				3A82B2AB2589029D008AEC06 /* FilterCell.swift */,
 				3A82B2AF2589051E008AEC06 /* Filter.swift */,
+				3A4F941225A1D3D900CE3D23 /* Legal.swift */,
 				3ACE4B8325334484001AF0F6 /* AppDelegate.swift */,
 				3ACE4B8525334484001AF0F6 /* SceneDelegate.swift */,
 				3ACE4B8925334484001AF0F6 /* Main.storyboard */,
@@ -292,7 +286,6 @@
 				3A4F940C25A1C7CE00CE3D23 /* DudesDebug.entitlements */,
 				3A2EF15725776E55003E9849 /* Dudes.xcdatamodeld */,
 				3ACE4B8F25334485001AF0F6 /* Assets.xcassets */,
-				3AF8491D25A361560013DB5B /* Stickers.xcstickers */,
 			);
 			path = Dudes;
 			sourceTree = "<group>";
@@ -311,11 +304,14 @@
 		3AF8494425A362A40013DB5B /* Dudes Stickers */ = {
 			isa = PBXGroup;
 			children = (
-				3AF8495725A365FB0013DB5B /* Dudes StickersDebug.entitlements */,
+				3A7846FE25A48BC30058A754 /* Dudes StickersDebug.entitlements */,
+				3A78470A25A4AD220058A754 /* FilterCell.swift */,
+				3A7846CD25A472060058A754 /* StickerCell.swift */,
 				3AF8494525A362A40013DB5B /* MessagesViewController.swift */,
 				3AF8494725A362A40013DB5B /* MainInterface.storyboard */,
 				3AF8494A25A362A60013DB5B /* Assets.xcassets */,
 				3AF8494C25A362A60013DB5B /* Info.plist */,
+				3A78470125A48C4C0058A754 /* CoreStack.swift */,
 			);
 			path = "Dudes Stickers";
 			sourceTree = "<group>";
@@ -416,7 +412,6 @@
 			files = (
 				3ACE4B9025334485001AF0F6 /* Assets.xcassets in Resources */,
 				3ACE4B8B25334484001AF0F6 /* Main.storyboard in Resources */,
-				3AF8491E25A361560013DB5B /* Stickers.xcstickers in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,21 +431,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AAA9576259B21450064A3A2 /* MenuViewController.swift in Sources */,
 				3A6F74F62577922E004DC417 /* DudeCell.swift in Sources */,
 				3AB4FC31256355910050C898 /* CVPixelBufferExtension.swift in Sources */,
 				3A2EF15925776E55003E9849 /* Dudes.xcdatamodeld in Sources */,
 				3A0D05CA254ED1B8002E5876 /* DudesViewController.swift in Sources */,
 				3A603843258AA49F00D648AD /* StickerpackViewController.swift in Sources */,
-				3ABA0C352596E89A003560FF /* DudesUnlimViewController.swift in Sources */,
 				3A603847258AA7EE00D648AD /* DateExtension.swift in Sources */,
 				3AD842522556F90900751D92 /* CGPathExtension.swift in Sources */,
 				3A54F3FD2560E4980015C56A /* ShapeSkeleton.swift in Sources */,
 				3A8E9C7F254F0203007E2329 /* CGPointExtension.swift in Sources */,
 				3ADB78C3257FD1B300F7C8FA /* StringExtension.swift in Sources */,
-				3AAA9590259CD8C30064A3A2 /* Menu.swift in Sources */,
 				3A82B2AC2589029D008AEC06 /* FilterCell.swift in Sources */,
-				3ABA0C242596C4CD003560FF /* IAPManager.swift in Sources */,
 				3ACE4BA225334C36001AF0F6 /* DudesModel.swift in Sources */,
 				3A0CA7F1255F2EB200AEB278 /* CVPixelBuffer+Helpers.swift in Sources */,
 				3A453E2B258146FD00FA20C7 /* NetworkState.swift in Sources */,
@@ -485,7 +476,6 @@
 				3AED8AD62589918C00EA08AE /* SpinnerIndicator.swift in Sources */,
 				3AD84263255743AA00751D92 /* CGFloatPercentage.swift in Sources */,
 				3AA2C52825A38F8100656D0D /* Sticker+CoreDataProperties.swift in Sources */,
-				3A4F940925A13D9700CE3D23 /* SubscriptionViewController.swift in Sources */,
 				3ACE4B8625334484001AF0F6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +485,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF8494625A362A40013DB5B /* MessagesViewController.swift in Sources */,
+				3A78470225A48C4C0058A754 /* CoreStack.swift in Sources */,
+				3A7846F325A487560058A754 /* Stickerpack+CoreDataClass.swift in Sources */,
+				3A7846CE25A472060058A754 /* StickerCell.swift in Sources */,
+				3A7846F225A487560058A754 /* Stickerpack+CoreDataProperties.swift in Sources */,
+				3A7846F125A487560058A754 /* Sticker+CoreDataClass.swift in Sources */,
+				3A7846F425A487560058A754 /* Sticker+CoreDataProperties.swift in Sources */,
+				3A78470B25A4AD220058A754 /* FilterCell.swift in Sources */,
+				3A7846EC25A481280058A754 /* Dudes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

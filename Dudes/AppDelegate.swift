@@ -17,16 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         setupDefaultNavigationBarStyles()
-        SKPaymentQueue.default().add(IAPManager.shared)
-        
+
         return true
     }
-    
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        SKPaymentQueue.default().remove(IAPManager.shared)
-    }
-    
 
     func setupDefaultNavigationBarStyles() {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
@@ -52,35 +45,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     
-    // MARK: - Core Data stack
+//    // MARK: - Core Data stack
+//    lazy var persistentContainer: NSPersistentCloudKitContainer = {
+//        let container = NSPersistentCloudKitContainer(name: "Dudes")
+//        // Enable remote notifications
+//        guard let description = container.persistentStoreDescriptions.first else {
+//            fatalError("###\(#function): Failed to retrieve a persistent store description.")
+//        }
+//        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+//
+//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+//            if let error = error as NSError? {
+//                fatalError("Unresolved error \(error), \(error.userInfo)")
+//            }
+//            container.viewContext.automaticallyMergesChangesFromParent = true
+//        })
+//
+//        // This turns on a remote change notifications
+//        let remoteChangeKey = "NSPersistentStoreRemoteChangeNotificationOptionKey"
+//        description.setOption(true as NSNumber,
+//                                   forKey: remoteChangeKey)
+//
+//        container.persistentStoreDescriptions = [description]
+//
+//        return container
+//    }()
+    
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
+
         let container = NSPersistentCloudKitContainer(name: "Dudes")
-        // Enable remote notifications
-        guard let description = container.persistentStoreDescriptions.first else {
-            fatalError("###\(#function): Failed to retrieve a persistent store description.")
-        }
-        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        
+        let storeURL = URL.storeURL(for: "group.com.getdudesapp.Dudes.container", databaseName: "Dudes")
+        let storeDescription = NSPersistentStoreDescription(url: storeURL)
+        storeDescription.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.getdudesapp.Dudes")
+        container.persistentStoreDescriptions = [storeDescription]
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
+ 
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-            container.viewContext.automaticallyMergesChangesFromParent = true
         })
-        
-        // This turns on a remote change notifications
-        let remoteChangeKey = "NSPersistentStoreRemoteChangeNotificationOptionKey"
-        description.setOption(true as NSNumber,
-                                   forKey: remoteChangeKey)
-        
-        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.getdudesapp.Dudes.container")!
-        let storeURL = containerURL.appendingPathComponent("Dudes.sqlite")
-
-        container.persistentStoreDescriptions = [description]
+        container.viewContext.automaticallyMergesChangesFromParent = true
         
         return container
     }()
-
     
     // MARK: - Core Data Saving support
     func saveContext () {
@@ -96,3 +105,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+public extension URL {
+    /// Returns a URL for the given app group and database pointing to the sqlite database.
+    static func storeURL(for appGroup: String, databaseName: String) -> URL {
+        guard let fileContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup) else {
+            fatalError("Shared file container could not be created.")
+        }
+
+        return fileContainer.appendingPathComponent("\(databaseName).sqlite")
+    }
+}
