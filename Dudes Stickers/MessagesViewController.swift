@@ -29,6 +29,7 @@ class MessagesViewController: MSMessagesAppViewController, UICollectionViewDeleg
         case stickers
     }
     
+    @IBOutlet weak var emptyStateView: UIStackView!
     @IBOutlet weak var filtersView: UIView!
     @IBOutlet weak var dudePreview: UIImageView!
     var stickersCollectionView: UICollectionView!
@@ -221,6 +222,17 @@ extension MessagesViewController {
             dudesSnapshot.appendSections([.stickers])
             dudesSnapshot.appendItems(selectedStickerpack)
             dudesDataSource.apply(dudesSnapshot, animatingDifferences: true)
+            
+            if selectedStickerpack.isEmpty {
+                print("EMPTY")
+                view.bringSubviewToFront(emptyStateView)
+                emptyStateView.isHidden = false
+                filtersCollectionView.isHidden = true
+            } else {
+                print("NOT EMPTY")
+                emptyStateView.isHidden = true
+                filtersCollectionView.isHidden = false
+            }
         }
     }
 }

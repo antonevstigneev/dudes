@@ -173,6 +173,7 @@ extension StickerpacksViewController {
             
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: identifier)
         }
+        
         applyDataSnapshot(animation: false)
     }
     

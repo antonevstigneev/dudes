@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pxM-v7-9wh">
-                                <rect key="frame" x="156" y="596" width="102" height="78"/>
+                                <rect key="frame" x="156" y="570" width="102" height="104"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP VERSION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jn-Xc-WfC">
                                         <rect key="frame" x="11.5" y="0.0" width="79.5" height="26"/>
@@ -41,6 +41,14 @@
                                         <state key="normal" title="TERMS OF USE"/>
                                         <connections>
                                             <action selector="termsOfUse:" destination="Wv1-Gy-tf0" eventType="touchUpInside" id="khq-Lv-vYR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APV-ZP-PIP">
+                                        <rect key="frame" x="4" y="78" width="94" height="26"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <state key="normal" title="SEND FEEDBACK"/>
+                                        <connections>
+                                            <action selector="sendFeedback:" destination="Wv1-Gy-tf0" eventType="touchUpInside" id="K8j-Bj-gCz"/>
                                         </connections>
                                     </button>
                                 </subviews>
