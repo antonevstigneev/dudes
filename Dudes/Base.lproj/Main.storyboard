@@ -190,14 +190,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVP-mo-khs">
-                                <rect key="frame" x="94.5" y="724" width="225" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bon-Ch-g21">
+                                <rect key="frame" x="76.5" y="668" width="261" height="34"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="exportStickerpack"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                <state key="normal" title="SHARE STICKERPACK">
+                                <state key="normal" title="USE IT WITH IMESSAGE">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVP-mo-khs">
+                                <rect key="frame" x="82.5" y="724" width="249" height="34"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="exportStickerpack"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="EXPORT FOR TELEGRAM">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -252,6 +268,25 @@
                                     <constraint firstAttribute="height" constant="80" id="sZj-MW-K3h"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZN5-gT-ULT">
+                                <rect key="frame" x="52.5" y="612" width="309" height="34"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="exportStickerpack"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="SHARE STICKERS AS IMAGES">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendStickerpackRequest:" destination="fNV-uc-4d3" eventType="touchUpInside" id="t9b-zD-bfS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zpN-xJ-XuE"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -259,7 +294,11 @@
                             <constraint firstAttribute="bottom" secondItem="XVP-mo-khs" secondAttribute="bottom" constant="50" id="1mG-Xb-bAn"/>
                             <constraint firstItem="XSk-al-0S1" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="3F7-09-BjC"/>
                             <constraint firstItem="XVP-mo-khs" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="3TT-C9-QBP"/>
+                            <constraint firstItem="XVP-mo-khs" firstAttribute="top" secondItem="Bon-Ch-g21" secondAttribute="bottom" constant="22" id="8VJ-Rv-9rk"/>
                             <constraint firstItem="EQh-V9-Y7q" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="ENs-eZ-jvH"/>
+                            <constraint firstItem="Bon-Ch-g21" firstAttribute="top" secondItem="ZN5-gT-ULT" secondAttribute="bottom" constant="22" id="Gte-Ot-pZB"/>
+                            <constraint firstItem="Bon-Ch-g21" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="N3z-uH-blL"/>
+                            <constraint firstItem="ZN5-gT-ULT" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="W7T-0n-7G0"/>
                             <constraint firstItem="XSk-al-0S1" firstAttribute="centerY" secondItem="KOj-KG-5UD" secondAttribute="centerY" id="iOi-DB-Ccy"/>
                             <constraint firstAttribute="bottom" secondItem="EQh-V9-Y7q" secondAttribute="bottom" constant="50" id="s4A-vM-frq"/>
                         </constraints>
@@ -307,7 +346,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="tme-eY-p9c"/>
-        <segue reference="yaL-Jc-pfI"/>
+        <segue reference="PjL-Ni-1w8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>

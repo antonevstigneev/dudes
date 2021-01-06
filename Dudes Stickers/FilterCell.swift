@@ -32,18 +32,17 @@ extension FilterCell {
     func configure() {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = false
-        label.font = UIFont(name: "Menlo", size: 14.0)
+        label.font = UIFont(name: "Menlo", size: 13.0)
         label.textColor = UIColor.darkGray
         label.textAlignment = .center
 
         contentView.addSubview(label)
         
-        let inset = CGFloat(10)
+        let inset = CGFloat(12)
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
             label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
-            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
             ])
     }
 }

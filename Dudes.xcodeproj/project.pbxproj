@@ -13,6 +13,7 @@
 		3A0D05CA254ED1B8002E5876 /* DudesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D05C9254ED1B8002E5876 /* DudesViewController.swift */; };
 		3A1906D6258FF95000D6EE9C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1906D5258FF95000D6EE9C /* CloudKit.framework */; };
 		3A1F8D1B258E6DE700B78A42 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F8D1A258E6DE700B78A42 /* UICollectionViewExtension.swift */; };
+		3A2C465425A50DEF0014D437 /* UserDefaults+isFirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C465325A50DEF0014D437 /* UserDefaults+isFirstLaunch.swift */; };
 		3A2EF15925776E55003E9849 /* Dudes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EF15725776E55003E9849 /* Dudes.xcdatamodeld */; };
 		3A453E2B258146FD00FA20C7 /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453E2A258146FD00FA20C7 /* NetworkState.swift */; };
 		3A453E3F2581777700FA20C7 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453E3E2581777700FA20C7 /* UIButtonExtension.swift */; };
@@ -104,6 +105,7 @@
 		3A1906D3258FF91000D6EE9C /* Dudes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dudes.entitlements; sourceTree = "<group>"; };
 		3A1906D5258FF95000D6EE9C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3A1F8D1A258E6DE700B78A42 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		3A2C465325A50DEF0014D437 /* UserDefaults+isFirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+isFirstLaunch.swift"; sourceTree = "<group>"; };
 		3A2EF15825776E55003E9849 /* Dudes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dudes.xcdatamodel; sourceTree = "<group>"; };
 		3A453E2A258146FD00FA20C7 /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
 		3A453E3E2581777700FA20C7 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				3A60384A258AB31400D648AD /* UIViewControllerExtension.swift */,
 				3AD73840258D6D2200A6107C /* UIStackViewExtension.swift */,
 				3A1F8D1A258E6DE700B78A42 /* UICollectionViewExtension.swift */,
+				3A2C465325A50DEF0014D437 /* UserDefaults+isFirstLaunch.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,13 +308,13 @@
 			isa = PBXGroup;
 			children = (
 				3A7846FE25A48BC30058A754 /* Dudes StickersDebug.entitlements */,
+				3A78470125A48C4C0058A754 /* CoreStack.swift */,
 				3A78470A25A4AD220058A754 /* FilterCell.swift */,
 				3A7846CD25A472060058A754 /* StickerCell.swift */,
 				3AF8494525A362A40013DB5B /* MessagesViewController.swift */,
 				3AF8494725A362A40013DB5B /* MainInterface.storyboard */,
 				3AF8494A25A362A60013DB5B /* Assets.xcassets */,
 				3AF8494C25A362A60013DB5B /* Info.plist */,
-				3A78470125A48C4C0058A754 /* CoreStack.swift */,
 			);
 			path = "Dudes Stickers";
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				3A5BDA77257FF1C7005FB1B7 /* PostRequests.swift in Sources */,
 				3A60384B258AB31400D648AD /* UIViewControllerExtension.swift in Sources */,
 				3AED8AD62589918C00EA08AE /* SpinnerIndicator.swift in Sources */,
+				3A2C465425A50DEF0014D437 /* UserDefaults+isFirstLaunch.swift in Sources */,
 				3AD84263255743AA00751D92 /* CGFloatPercentage.swift in Sources */,
 				3AA2C52825A38F8100656D0D /* Sticker+CoreDataProperties.swift in Sources */,
 				3ACE4B8625334484001AF0F6 /* SceneDelegate.swift in Sources */,

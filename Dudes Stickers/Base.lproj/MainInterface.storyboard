@@ -24,10 +24,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJv-uc-Xh0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="NNF-je-ff2"/>
+                                    <constraint firstAttribute="height" constant="50" id="NNF-je-ff2"/>
                                 </constraints>
                             </view>
                         </subviews>

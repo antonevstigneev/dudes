@@ -20,9 +20,10 @@ class MessagesViewController: MSMessagesAppViewController, UICollectionViewDeleg
     var dudesSnapshot: NSDiffableDataSourceSnapshot<Section, MSSticker>!
     var filtersCollectionView: UICollectionView!
     var filtersDataSource: UICollectionViewDiffableDataSource<Int, Int>!
-    
-    var stickerpacks: [Stickerpack] = []
-    var stickers: [MSSticker] = []
+    var swipeCount: Int = 0
+
+    var stickerpacks: [[MSSticker]] = []
+    var selectedStickerpack: [MSSticker] = []
     
     enum Section {
         case stickers
@@ -39,6 +40,8 @@ class MessagesViewController: MSMessagesAppViewController, UICollectionViewDeleg
         fetchStickerpacksData()
         configureHierarchy()
         configureDataSource()
+        showAllStickers()
+        setupSwipeGestures()
     }
     
     func fetchStickerpacksData() {
@@ -47,11 +50,10 @@ class MessagesViewController: MSMessagesAppViewController, UICollectionViewDeleg
         let sort = NSSortDescriptor(key: "timestamp", ascending: false)
         request.sortDescriptors = [sort]
         do {
-            stickerpacks = try container.viewContext.fetch(request)
-            
+            let stickerpacks = try container.viewContext.fetch(request)
             for stickerpack in stickerpacks {
+                var stickers: [MSSticker] = []
                 for case let sticker as Sticker in stickerpack.stickers!  {
-                    
                     let path = "\(stickerpack.id!)/\(sticker.id!).png"
                     let fileManager = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.getdudesapp.Dudes.container")
                     guard   let img = UIImage(data: sticker.image!),
@@ -61,10 +63,21 @@ class MessagesViewController: MSMessagesAppViewController, UICollectionViewDeleg
                     let sticker = try! MSSticker(contentsOfFileURL: url, localizedDescription: "sticker")
                     stickers.append(sticker)
                 }
+                self.stickerpacks.append(stickers)
             }
+            // get all stickers
+            let allStickers = self.stickerpacks.flatMap { $0 }
+            self.stickerpacks.append(allStickers)
+            
         } catch {
             print("Fetching failed")
         }
+    }
+    
+    func showAllStickers() {
+        let firstIndex = IndexPath(row: 0, section: 0)
+        filtersCollectionView.selectItem(at: firstIndex, animated: false, scrollPosition: [])
+        selectedStickerpack = stickerpacks.last!
     }
     
     // MARK: - Conversation Handling
@@ -143,7 +156,7 @@ extension MessagesViewController {
 // MARK: - CollectionView dataSource
 extension MessagesViewController {
     func configureHierarchy() {
-        dudesCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), collectionViewLayout: createDudesLayout())
+        dudesCollectionView = UICollectionView(frame: CGRect(x: 0, y: 35, width: view.bounds.width, height: view.bounds.height), collectionViewLayout: createDudesLayout())
         dudesCollectionView.delegate = self
         dudesCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         dudesCollectionView.backgroundColor = .black
@@ -154,10 +167,10 @@ extension MessagesViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = CGSize(width: 80, height: 35)
-        let frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 35)
+        let frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 50)
         filtersCollectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         filtersCollectionView.delegate = self
-        filtersCollectionView.contentInset = UIEdgeInsets(top: 12, left: 25, bottom: 0, right: 25)
+        filtersCollectionView.contentInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         filtersCollectionView.showsHorizontalScrollIndicator = false
         filtersView.addSubview(filtersCollectionView)
         view.bringSubviewToFront(filtersView)
@@ -165,8 +178,8 @@ extension MessagesViewController {
     
     func configureDataSource() {
         let dudeCellRegistration = UICollectionView.CellRegistration
-        <StickerCell, MSSticker> { (cell, indexPath, sticker) in
-            cell.stickerView.sticker = self.stickers[indexPath.row]
+        <StickerCell, MSSticker> { [self] (cell, indexPath, sticker) in
+            cell.stickerView.sticker = selectedStickerpack[indexPath.row]
         }
         
         dudesDataSource = UICollectionViewDiffableDataSource<Section, MSSticker>(collectionView: dudesCollectionView) {
@@ -177,8 +190,13 @@ extension MessagesViewController {
         
         let filterCellRegistration  = UICollectionView.CellRegistration
         <FilterCell, Int> { (cell, indexPath, identifier) in
-            let stickerpackTitle = "DUDES " + String(format: "%02d", self.stickerpacks.count - indexPath.row)
-            cell.label.text = stickerpackTitle
+            if indexPath.row == 0 {
+                cell.label.text = "DUDES"
+            } else {
+                let stickerpackTitle = "DUDES-" + String(format: "%02d", self.stickerpacks.count - indexPath.row)
+                cell.label.text = stickerpackTitle
+            }
+            
         }
         
         filtersDataSource = UICollectionViewDiffableDataSource<Int, Int>(collectionView: filtersCollectionView) {
@@ -201,9 +219,64 @@ extension MessagesViewController {
         DispatchQueue.main.async() { [self] in
             dudesSnapshot = NSDiffableDataSourceSnapshot<Section, MSSticker>()
             dudesSnapshot.appendSections([.stickers])
-            dudesSnapshot.appendItems(stickers)
+            dudesSnapshot.appendItems(selectedStickerpack)
             dudesDataSource.apply(dudesSnapshot, animatingDifferences: true)
         }
+    }
+}
+
+
+extension MessagesViewController {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == filtersCollectionView {
+            if indexPath.row == 0 {
+                selectedStickerpack = stickerpacks.last!
+            } else {
+                selectedStickerpack = stickerpacks[indexPath.row-1]
+            }
+            applyDataSnapshot()
+        }
+    }
+}
+
+
+extension MessagesViewController {
+    func setupSwipeGestures() {
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+    }
+    
+    @objc func handleSwipes(_ sender: UISwipeGestureRecognizer) {
+        if sender.direction == .left {
+            if swipeCount < stickerpacks.count-1 {
+                swipeCount += 1
+            } else {
+                swipeCount += 0
+            }
+        }
+
+        if sender.direction == .right {
+            if swipeCount > 0 {
+                swipeCount -= 1
+            } else {
+                swipeCount -= 0
+            }
+        }
+        filtersCollectionView.selectItem(at: IndexPath(row: swipeCount, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        if swipeCount == 0 {
+            selectedStickerpack = stickerpacks.last!
+        } else if swipeCount == stickerpacks.count-1 {
+            selectedStickerpack = stickerpacks[swipeCount-1]
+        } else {
+            selectedStickerpack = stickerpacks[swipeCount-1]
+        }
+        applyDataSnapshot()
     }
 }
 
@@ -221,9 +294,6 @@ extension UIImage {
         return save(at: directory.appendingPathComponent(pathAndImageName),
                     createSubdirectoriesIfNeed: createSubdirectoriesIfNeed,
                     compressionQuality: compressionQuality)
-        } catch {
-            print("-- Error: \(error)")
-            return nil
         }
     }
 

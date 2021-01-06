@@ -10,6 +10,11 @@ import UIKit
 extension UIViewController {
     func showAlert(_ title: String, _ message: String = "", installTelegram: Bool = false) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // alert styles
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "AccentColor")
+        alert.view.tintColor = .black
+        
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
             UIAlertAction in
         }
@@ -30,8 +35,6 @@ extension UIViewController {
             alert.addAction(okAction)
         }
         
-        alert.view.tintColor = UIColor.init(named: "AccentColor")
-        
         DispatchQueue.main.async() {
             self.present(alert, animated: true, completion: nil)
         }
@@ -44,14 +47,17 @@ extension UIViewController {
             let alertController = UIAlertController(title: title,
                                                     message: message,
                                                     preferredStyle: .alert)
-            alertController.view.tintColor = UIColor.lightGray
+            
+            // alertController styles
+            alertController.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "AccentColor")
+            alertController.view.tintColor = .black
             
             let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel",
-                                                            style: .cancel) {
+                                                            style: .default) {
                                                                 action -> Void in cancel?()
             }
             let successAction: UIAlertAction = UIAlertAction(title: confirmation,
-                                                             style: .destructive) {
+                                                             style: .default) {
                                                                 action -> Void in success?()
             }
             alertController.addAction(cancelAction)
