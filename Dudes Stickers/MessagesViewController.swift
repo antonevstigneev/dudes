@@ -191,7 +191,7 @@ extension MessagesViewController {
         let filterCellRegistration  = UICollectionView.CellRegistration
         <FilterCell, Int> { (cell, indexPath, identifier) in
             if indexPath.row == 0 {
-                cell.label.text = "DUDES"
+                cell.label.text = "ALL"
             } else {
                 let stickerpackTitle = "DUDES-" + String(format: "%02d", self.stickerpacks.count - indexPath.row)
                 cell.label.text = stickerpackTitle
@@ -228,6 +228,7 @@ extension MessagesViewController {
 
 extension MessagesViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        swipeCount = indexPath.row
         if collectionView == filtersCollectionView {
             if indexPath.row == 0 {
                 selectedStickerpack = stickerpacks.last!

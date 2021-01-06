@@ -31,20 +31,15 @@ class StickerpackViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var emptyStateView: UIStackView!
     @IBOutlet weak var exportStickerpackButton: UIButton!
     @IBOutlet weak var updateStickerpackButton: UIButton!
-    @IBAction func sendStickerpackRequest(_ sender: UIButton) {
-        // open iMessage:
-        UIApplication.shared.open(URL(string: "sms:")!, options: [:], completionHandler: nil)
-
-//        // TELEGRAM EXPORT METHOD
-//        let action = sender.accessibilityIdentifier!
-//        if !NetworkState.isConnectedToNetwork() {
-//            self.showAlert("No internet connection")
-//        } else {
-//            self.showSpinner()
-//            processStickerpackData(with: action)
-//        }
+    @IBAction func saveAndShareStickerpack(_ sender: UIButton) {
+        print("App was launched first time? – \(UserDefaults.standard.value(forKey: "isFirstLaunch") as! Bool)")
+        saveStickerpack()
+        let action = sender.accessibilityIdentifier!
+        action == "exportStickerpack" ? stickerpackExported(true) : stickerpackUpdated()
+        (UserDefaults.standard.value(forKey: "isFirstLaunch") as! Bool) ? showExplanataryAlert() : showAlert("SAVED!")
+        UserDefaults.standard.setValue(false, forKey: "isFirstLaunch")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
@@ -117,7 +112,6 @@ class StickerpackViewController: UIViewController, UICollectionViewDelegate {
     }
     
     func setupTransferButtons() {
-        stickerpack.isInUpdateMode == true || stickerpack.isExported != true ? saveStickerpack() : nil
         if stickerpack.isInUpdateMode == true && stickerpack.isExported == true {
             updateStickerpackButton.isHidden = false
             exportStickerpackButton.isHidden = true
@@ -146,7 +140,7 @@ extension StickerpackViewController {
                     UIApplication.shared.open(botURL!)
                 } else {
                     stickerpackExported(false)
-                    showAlert("Telegram is not installed", "To export stickerpack for Telegram the Telegram app must be installed.", installTelegram: true)
+                    showAlert("Telegram is not installed", "To export stickerpack for Telegram the Telegram app must be installed.")
                 }
             } else {
                     stickerpackExported(false)

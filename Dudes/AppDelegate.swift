@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        print(UserDefaults.isFirstLaunch())
+        let isFirstLaunch = UserDefaults.isFirstLaunch()
+        print(isFirstLaunch)
+        UserDefaults.standard.setValue(isFirstLaunch, forKey: "isFirstLaunch")
         setupDefaultNavigationBarStyles()
 
         return true
@@ -47,31 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
 //    // MARK: - Core Data stack
-//    lazy var persistentContainer: NSPersistentCloudKitContainer = {
-//        let container = NSPersistentCloudKitContainer(name: "Dudes")
-//        // Enable remote notifications
-//        guard let description = container.persistentStoreDescriptions.first else {
-//            fatalError("###\(#function): Failed to retrieve a persistent store description.")
-//        }
-//        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-//
-//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-//            if let error = error as NSError? {
-//                fatalError("Unresolved error \(error), \(error.userInfo)")
-//            }
-//            container.viewContext.automaticallyMergesChangesFromParent = true
-//        })
-//
-//        // This turns on a remote change notifications
-//        let remoteChangeKey = "NSPersistentStoreRemoteChangeNotificationOptionKey"
-//        description.setOption(true as NSNumber,
-//                                   forKey: remoteChangeKey)
-//
-//        container.persistentStoreDescriptions = [description]
-//
-//        return container
-//    }()
-    
+
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
 
         let container = NSPersistentCloudKitContainer(name: "Dudes")
@@ -83,11 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
- 
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
+            container.viewContext.automaticallyMergesChangesFromParent = true
         })
-        container.viewContext.automaticallyMergesChangesFromParent = true
         
         return container
     }()

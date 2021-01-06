@@ -50,7 +50,6 @@
 		3AAA9583259C7F300064A3A2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA9582259C7F300064A3A2 /* AboutViewController.swift */; };
 		3AAA9595259DA18B0064A3A2 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA9594259DA18B0064A3A2 /* DeviceInfo.swift */; };
 		3AB4FC31256355910050C898 /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4FC30256355910050C898 /* CVPixelBufferExtension.swift */; };
-		3ABA0C212595BCCD003560FF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABA0C202595BCCD003560FF /* StoreKit.framework */; };
 		3ACE4B8425334484001AF0F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE4B8325334484001AF0F6 /* AppDelegate.swift */; };
 		3ACE4B8625334484001AF0F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE4B8525334484001AF0F6 /* SceneDelegate.swift */; };
 		3ACE4B8B25334484001AF0F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE4B8925334484001AF0F6 /* Main.storyboard */; };
@@ -171,7 +170,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1906D6258FF95000D6EE9C /* CloudKit.framework in Frameworks */,
-				3ABA0C212595BCCD003560FF /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,7 +698,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNR45DX7YX;
 				INFOPLIST_FILE = "Dudes Stickers/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -721,7 +719,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNR45DX7YX;
 				INFOPLIST_FILE = "Dudes Stickers/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
