@@ -29,22 +29,34 @@ class StickerpackViewController: UIViewController, UICollectionViewDelegate {
     var selectedCells = Set<IndexPath>()
     
     @IBOutlet weak var emptyStateView: UIStackView!
-    @IBOutlet weak var exportStickerpackButton: UIButton!
-    @IBOutlet weak var updateStickerpackButton: UIButton!
-    @IBAction func saveAndShareStickerpack(_ sender: UIButton) {
-        print("App was launched first time? – \(UserDefaults.standard.value(forKey: "isFirstLaunch") as! Bool)")
-        saveStickerpack()
-        let action = sender.accessibilityIdentifier!
-        action == "exportStickerpack" ? stickerpackExported(true) : stickerpackUpdated()
-        (UserDefaults.standard.value(forKey: "isFirstLaunch") as! Bool) ? showExplanataryAlert() : showAlert("SAVED!")
-        UserDefaults.standard.setValue(false, forKey: "isFirstLaunch")
+    @IBOutlet weak var shareStickerpackButton: UIButton!
+    @IBAction func shareStickerpack(_ sender: UIButton) {
+//        saveStickerpack()
+//        (UserDefaults.standard.value(forKey: "isFirstLaunch") as! Bool) ? showExplanataryAlert() : showAlert("SAVED!")
+//        UserDefaults.standard.setValue(false, forKey: "isFirstLaunch")
+        
+        let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        for messenger in Messenger.allCases {
+            let actionAlert: UIAlertAction = UIAlertAction(title: messenger.rawValue, style: .default) { action in
+                // Sharing action here
+                print(messenger.rawValue)
+            }
+            controller.addAction(actionAlert)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        cancelAction.setValue(UIColor.lightGray, forKey: "titleTextColor")
+        
+        controller.addAction(cancelAction)
+        controller.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "ActionSheet")
+        controller.view.tintColor = UIColor(named: "AccentColor")
+        
+        self.present(controller, animated: true, completion: nil)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
         configureDataSource()
-        setupTransferButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +88,6 @@ class StickerpackViewController: UIViewController, UICollectionViewDelegate {
             }
             stickerpack.isInUpdateMode = true
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            setupTransferButtons()
             applyDataSnapshot()
             cancelStickerpackChanges()
         }) { [self] () -> Void in
@@ -98,56 +109,9 @@ class StickerpackViewController: UIViewController, UICollectionViewDelegate {
         self.performSegue(withIdentifier: "DudesViewController", sender: (Any).self)
     }
     
-    func stickerpackExported(_ bool: Bool) {
-        stickerpack.isInUpdateMode = false
-        stickerpack.isExported = NSNumber(value: bool)
-        exportStickerpackButton.isHidden = bool
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    }
-    
     func stickerpackUpdated() {
         stickerpack.isInUpdateMode = false
-        updateStickerpackButton.isHidden = true
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    }
-    
-    func setupTransferButtons() {
-        if stickerpack.isInUpdateMode == true && stickerpack.isExported == true {
-            updateStickerpackButton.isHidden = false
-            exportStickerpackButton.isHidden = true
-        } else if stickerpack.isExported == true {
-            exportStickerpackButton.isHidden = true
-        }
-    }
-}
-
-
-
-extension StickerpackViewController {
-    func processStickerpackData(with action: String) {
-        let dudesImages = dudes.map { UIImage(data: $0.image)!.convertToString() }
-        let emojis = self.dudes.map { $0.emotion }
-        let id = stickerpack.id!
-
-        postRequest(id: id, emojis: emojis, dudes: dudesImages) { (success, error) in
-            DispatchQueue.main.async() { [self] in
-            removeSpinner()
-            if success {
-                action == "exportStickerpack" ? stickerpackExported(true) : stickerpackUpdated()
-                let botURL = URL.init(string: "tg://resolve?domain=DudesStickersBot?start=\(stickerpack.id!)_\(action)")
-
-                if UIApplication.shared.canOpenURL(botURL!) {
-                    UIApplication.shared.open(botURL!)
-                } else {
-                    stickerpackExported(false)
-                    showAlert("Telegram is not installed", "To export stickerpack for Telegram the Telegram app must be installed.")
-                }
-            } else {
-                    stickerpackExported(false)
-                    showAlert("Stickerpack request failed", "Please try again later.")
-                }
-            }
-        }
     }
 }
 
@@ -170,7 +134,6 @@ extension StickerpackViewController {
 // MARK: - Stickerpack saving method
 extension StickerpackViewController {
     func saveStickerpack() {
-        
         // populate stickerpack with stickers
         var dudesToSave: [Dude] = []
         if stickerpack.isInUpdateMode == true {
@@ -227,8 +190,7 @@ extension StickerpackViewController {
         dudesCollectionView.allowsMultipleSelection = true
         dudesCollectionView.showsVerticalScrollIndicator = false
         view.addSubview(dudesCollectionView)
-        view.bringSubviewToFront(exportStickerpackButton)
-        view.bringSubviewToFront(updateStickerpackButton)
+        view.bringSubviewToFront(shareStickerpackButton)
     }
     
     func configureDataSource() {
@@ -242,8 +204,7 @@ extension StickerpackViewController {
             
             return collectionView.dequeueConfiguredReusableCell(using: dudeCellRegistration, for: indexPath, item: identifier)
         }
-
-        // dudes initial data
+        
         applyDataSnapshot()
     }
     
@@ -257,8 +218,7 @@ extension StickerpackViewController {
             if dudes.isEmpty {
                 view.bringSubviewToFront(emptyStateView)
                 emptyStateView.isHidden = false
-                exportStickerpackButton.isHidden = true
-                updateStickerpackButton.isHidden = true
+                shareStickerpackButton.isHidden = true
             } else {
                 emptyStateView.isHidden = true
             }
@@ -267,6 +227,8 @@ extension StickerpackViewController {
 }
 
 
+
+// MARK: - CollectionView Selection
 extension StickerpackViewController {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -296,31 +258,7 @@ extension StickerpackViewController {
 
 
 
-// MARK: - Context menu
-extension StickerpackViewController {
-    
-    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        return UIContextMenuConfiguration(identifier: indexPath as NSIndexPath, previewProvider: nil) { _ in
-            return self.createContextMenu(indexPath: indexPath)
-        }
-    }
-    
-    func createContextMenu(indexPath: IndexPath) -> UIMenu {
-        
-        let selectedDude = dudes[indexPath.row]
-        selectedDudes.insert(selectedDude)
-        
-        let makeShareStickerAction = UIAction(
-            title: "Share",
-            image: UIImage(systemName: "square.and.arrow.up")) { _ in
-                self.shareImages([UIImage(data: selectedDude.image)!])
-            }
-        
-        return UIMenu(title: "", children: [makeShareStickerAction])
-    }
-}
-
-
+// MARK: - NavigationBar setup
 extension StickerpackViewController {
     func setupNavigationItems() {
         let image = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(weight: .medium))
@@ -328,5 +266,34 @@ extension StickerpackViewController {
         navigationController?.navigationBar.tintColor = UIColor(named: "AccentColor")!
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.isNavigationBarHidden = false
+    }
+}
+
+
+
+// MARK: - Telegram export
+extension StickerpackViewController {
+    func exportToTelegram() {
+        let dudesImages = dudes.map { UIImage(data: $0.image)!.convertToString() }
+        let emojis = self.dudes.map { $0.emotion }
+        let id = stickerpack.id!
+
+        postRequest(id: id, emojis: emojis, dudes: dudesImages) { (success, error) in
+            DispatchQueue.main.async() { [self] in
+            removeSpinner()
+            if success {
+                let botURL = URL.init(string: "tg://resolve?domain=DudesStickersBot?start=\(stickerpack.id!)")
+
+                if UIApplication.shared.canOpenURL(botURL!) {
+                    UIApplication.shared.open(botURL!)
+                } else {
+                    showAlert("Telegram is not installed",
+                              "To export stickerpack for Telegram the Telegram app must be installed.")
+                }
+            } else {
+                    showAlert("Stickerpack request failed", "Please try again later.")
+                }
+            }
+        }
     }
 }

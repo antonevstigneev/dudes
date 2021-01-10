@@ -53,21 +53,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
 
         let container = NSPersistentCloudKitContainer(name: "Dudes")
-        
+
         let storeURL = URL.storeURL(for: "group.com.getdudesapp.Dudes.container", databaseName: "Dudes")
         let storeDescription = NSPersistentStoreDescription(url: storeURL)
         storeDescription.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.getdudesapp.Dudes")
         container.persistentStoreDescriptions = [storeDescription]
-        
+
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
             container.viewContext.automaticallyMergesChangesFromParent = true
         })
-        
+
         return container
     }()
+
     
     // MARK: - Core Data Saving support
     func saveContext () {

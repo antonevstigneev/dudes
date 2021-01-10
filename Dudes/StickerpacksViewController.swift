@@ -236,9 +236,6 @@ extension StickerpacksViewController {
     
     func createContextMenu(indexPath: IndexPath) -> UIMenu {
         
-        let selectedStickerpack = dudesStickerpacks[indexPath.row]
-        let stickersImages = selectedStickerpack.map { UIImage(data: $0.image)! }
-        
         let makeDeleteStickerpackAction = UIAction(
             title: "Delete",
             image: UIImage(systemName: "minus.circle"),
@@ -246,15 +243,7 @@ extension StickerpacksViewController {
                 self.deleteStickerpack(from: indexPath)
             }
         
-        let makeShareStickerpackAction = UIAction(
-            title: "Share",
-            image: UIImage(systemName: "square.and.arrow.up")) { _ in
-                self.shareImages(stickersImages)
-            }
-        
-        return UIMenu(title: "", children: [makeShareStickerpackAction,
-                                            makeDeleteStickerpackAction,
-                                            ])
+        return UIMenu(title: "", children: [makeDeleteStickerpackAction])
     }
 }
 

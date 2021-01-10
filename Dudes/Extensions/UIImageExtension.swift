@@ -231,10 +231,7 @@ extension UIImage {
         return save(at: directory.appendingPathComponent(pathAndImageName),
                     createSubdirectoriesIfNeed: createSubdirectoriesIfNeed,
                     compressionQuality: compressionQuality)
-        } catch {
-            print("-- Error: \(error)")
-            return nil
-        }
+        } 
     }
 
     func save(at url: URL,

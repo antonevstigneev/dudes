@@ -198,45 +198,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVP-mo-khs">
-                                <rect key="frame" x="56" y="727" width="302" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVP-mo-khs">
+                                <rect key="frame" x="84.5" y="722" width="245.5" height="36"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="exportStickerpack"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                <state key="normal" title="SAVE AND SHARE TO IMESSAGE">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="17"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="saveAndShareStickerpack:" destination="fNV-uc-4d3" eventType="touchUpInside" id="zEn-RE-iEE"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQh-V9-Y7q">
-                                <rect key="frame" x="50.5" y="724" width="313" height="34"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <accessibility key="accessibilityConfiguration" identifier="updateStickerpack"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="1Xi-a6-YPX"/>
+                                    <constraint firstAttribute="height" constant="36" id="tIF-UZ-y6Y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                <state key="normal" title="SAVE AND UPDATE STICKERPACK">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="5" maxX="12" maxY="5"/>
+                                <state key="normal" title=" EXPORT STICKERPACK" image="arrow.up" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15" weight="medium"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="17"/>
+                                        <real key="value" value="18"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="saveAndShareStickerpack:" destination="fNV-uc-4d3" eventType="touchUpInside" id="SHZ-w6-Kqd"/>
+                                    <action selector="shareStickerpack:" destination="fNV-uc-4d3" eventType="touchUpInside" id="g7w-Rv-FRb"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XSk-al-0S1">
@@ -267,9 +248,7 @@
                             <constraint firstAttribute="bottom" secondItem="XVP-mo-khs" secondAttribute="bottom" constant="50" id="1mG-Xb-bAn"/>
                             <constraint firstItem="XSk-al-0S1" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="3F7-09-BjC"/>
                             <constraint firstItem="XVP-mo-khs" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="3TT-C9-QBP"/>
-                            <constraint firstItem="EQh-V9-Y7q" firstAttribute="centerX" secondItem="KOj-KG-5UD" secondAttribute="centerX" id="ENs-eZ-jvH"/>
                             <constraint firstItem="XSk-al-0S1" firstAttribute="centerY" secondItem="KOj-KG-5UD" secondAttribute="centerY" id="iOi-DB-Ccy"/>
-                            <constraint firstAttribute="bottom" secondItem="EQh-V9-Y7q" secondAttribute="bottom" constant="50" id="s4A-vM-frq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ax1-ny-cVp">
@@ -277,8 +256,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emptyStateView" destination="XSk-al-0S1" id="0nc-5I-z3p"/>
-                        <outlet property="exportStickerpackButton" destination="XVP-mo-khs" id="PFj-oT-ywQ"/>
-                        <outlet property="updateStickerpackButton" destination="EQh-V9-Y7q" id="JZZ-th-eel"/>
+                        <outlet property="shareStickerpackButton" destination="XVP-mo-khs" id="Ygs-sA-oh1"/>
                         <segue destination="G3G-r6-g53" kind="show" identifier="StickerpacksViewController" id="07s-h3-muQ"/>
                         <segue destination="Qkn-YR-c9I" kind="show" identifier="DudesViewController" id="PjL-Ni-1w8"/>
                     </connections>
@@ -315,10 +293,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="tme-eY-p9c"/>
-        <segue reference="yaL-Jc-pfI"/>
+        <segue reference="PjL-Ni-1w8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>
+        <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.25882352941176473" green="0.94117647058823528" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

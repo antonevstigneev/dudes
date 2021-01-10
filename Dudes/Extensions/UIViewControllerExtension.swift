@@ -12,14 +12,14 @@ extension UIViewController {
 
         let attributedString = NSAttributedString(string: title, attributes: [
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
-            NSAttributedString.Key.foregroundColor : UIColor.black
+            NSAttributedString.Key.foregroundColor : UIColor(named: "AccentColor")!
         ])
         let alert = UIAlertController(title: "", message: message,  preferredStyle: .alert)
         alert.setValue(attributedString, forKey: "attributedTitle")
         
         // alert styles
-        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "AccentColor")
-        alert.view.tintColor = .black
+        alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "ActionSheet")
+        alert.view.tintColor = UIColor(named: "AccentColor")
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
             UIAlertAction in
@@ -40,14 +40,14 @@ extension UIViewController {
         DispatchQueue.main.async {
             let attributedString = NSAttributedString(string: title, attributes: [
                 NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
-                NSAttributedString.Key.foregroundColor : UIColor.black
+                NSAttributedString.Key.foregroundColor : UIColor(named: "AccentColor")!
             ])
             let alertController = UIAlertController(title: "", message: message,  preferredStyle: .alert)
             alertController.setValue(attributedString, forKey: "attributedTitle")
             
             // alertController styles
-            alertController.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "AccentColor")
-            alertController.view.tintColor = .black
+            alertController.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "ActionSheet")
+            alertController.view.tintColor = UIColor(named: "AccentColor")
             
             let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel",
                                                             style: .default) {

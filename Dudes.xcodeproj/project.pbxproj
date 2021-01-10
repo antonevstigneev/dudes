@@ -29,6 +29,7 @@
 		3A603843258AA49F00D648AD /* StickerpackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A603842258AA49F00D648AD /* StickerpackViewController.swift */; };
 		3A603847258AA7EE00D648AD /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A603846258AA7EE00D648AD /* DateExtension.swift */; };
 		3A60384B258AB31400D648AD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60384A258AB31400D648AD /* UIViewControllerExtension.swift */; };
+		3A66167025AB3C1A00753294 /* Messenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A66166F25AB3C1A00753294 /* Messenger.swift */; };
 		3A6F74F62577922E004DC417 /* DudeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6F74F52577922E004DC417 /* DudeCell.swift */; };
 		3A7846CE25A472060058A754 /* StickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7846CD25A472060058A754 /* StickerCell.swift */; };
 		3A7846EC25A481280058A754 /* Dudes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A2EF15725776E55003E9849 /* Dudes.xcdatamodeld */; };
@@ -121,6 +122,7 @@
 		3A603842258AA49F00D648AD /* StickerpackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerpackViewController.swift; sourceTree = "<group>"; };
 		3A603846258AA7EE00D648AD /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		3A60384A258AB31400D648AD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		3A66166F25AB3C1A00753294 /* Messenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messenger.swift; sourceTree = "<group>"; };
 		3A6F74F52577922E004DC417 /* DudeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DudeCell.swift; sourceTree = "<group>"; };
 		3A7846CD25A472060058A754 /* StickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerCell.swift; sourceTree = "<group>"; };
 		3A7846FE25A48BC30058A754 /* Dudes StickersDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dudes StickersDebug.entitlements"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		3AAA9594259DA18B0064A3A2 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		3AB4FC30256355910050C898 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
 		3ABA0C202595BCCD003560FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3AC877EE25A64C90004C192C /* Dudes Stickers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dudes Stickers.entitlements"; sourceTree = "<group>"; };
 		3ACE4B8025334484001AF0F6 /* Dudes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dudes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ACE4B8325334484001AF0F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ACE4B8525334484001AF0F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +206,7 @@
 				3A5BDA76257FF1C7005FB1B7 /* PostRequests.swift */,
 				3A453E2A258146FD00FA20C7 /* NetworkState.swift */,
 				3AED8AD52589918C00EA08AE /* SpinnerIndicator.swift */,
+				3A66166F25AB3C1A00753294 /* Messenger.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -305,6 +309,7 @@
 		3AF8494425A362A40013DB5B /* Dudes Stickers */ = {
 			isa = PBXGroup;
 			children = (
+				3AC877EE25A64C90004C192C /* Dudes Stickers.entitlements */,
 				3A7846FE25A48BC30058A754 /* Dudes StickersDebug.entitlements */,
 				3A78470125A48C4C0058A754 /* CoreStack.swift */,
 				3A78470A25A4AD220058A754 /* FilterCell.swift */,
@@ -436,6 +441,7 @@
 				3AB4FC31256355910050C898 /* CVPixelBufferExtension.swift in Sources */,
 				3A2EF15925776E55003E9849 /* Dudes.xcdatamodeld in Sources */,
 				3A0D05CA254ED1B8002E5876 /* DudesViewController.swift in Sources */,
+				3A66167025AB3C1A00753294 /* Messenger.swift in Sources */,
 				3A603843258AA49F00D648AD /* StickerpackViewController.swift in Sources */,
 				3A603847258AA7EE00D648AD /* DateExtension.swift in Sources */,
 				3AD842522556F90900751D92 /* CGPathExtension.swift in Sources */,
@@ -652,7 +658,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Dudes/DudesDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = NNR45DX7YX;
 				INFOPLIST_FILE = Dudes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -675,7 +681,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Dudes/Dudes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = NNR45DX7YX;
 				INFOPLIST_FILE = Dudes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -696,7 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = "Dudes Stickers/Dudes StickersDebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = NNR45DX7YX;
 				INFOPLIST_FILE = "Dudes Stickers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -717,8 +723,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "Dudes Stickers/Dudes Stickers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = NNR45DX7YX;
 				INFOPLIST_FILE = "Dudes Stickers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
