@@ -23,7 +23,7 @@ class DudesViewController: UIViewController, UICollectionViewDelegate {
     var dudes: [Dude] = []
     var dudesBeforeUpdate: [Dude] = []
     var selectedDudes = Set<Dude>()
-    var selectedDudesLimit: Int = 99
+    var selectedDudesLimit: Int = DudesInStickerpackLimit
     var selectedCells = Set<IndexPath>()
     var isGenerating: Bool!
     var dudesCollectionView: UICollectionView!
@@ -48,8 +48,9 @@ class DudesViewController: UIViewController, UICollectionViewDelegate {
         configureHierarchy()
         configureDataSource()
         generateDudes()
-        let selectedDudesCount = String(format: "%02d", selectedDudes.count)
-        selectedLabel.text = "\(selectedDudesCount)/\(selectedDudesLimit) SELECTED"
+        let dudesCount = String(format: "%02d", selectedDudes.count)
+        let dudesLimit = String(format: "%02d", selectedDudesLimit)
+        selectedLabel.text = "\(dudesCount)/\(dudesLimit) SELECTED"
         navigationItem.leftBarButtonItem = UIBarButtonItem()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(exitGeneration))
     }
@@ -251,8 +252,9 @@ extension DudesViewController {
             selectedDudes.insert(selectedDude!)
             selectedDudes.count > 0 ? createStickerpackButton.isEnabled = true : nil
             selectedDudes.count == selectedDudesLimit ? selectedLabel.shake() : nil
-            let selectedDudesCount = String(format: "%02d", selectedDudes.count)
-            selectedLabel.text = "\(selectedDudesCount)/\(selectedDudesLimit) SELECTED"
+            let dudesCount = String(format: "%02d", selectedDudes.count)
+            let dudesLimit = String(format: "%02d", selectedDudesLimit)
+            selectedLabel.text = "\(dudesCount)/\(dudesLimit) SELECTED"
         }
 
         else if collectionView == filtersCollectionView {
@@ -272,8 +274,9 @@ extension DudesViewController {
             let deselectedDude = dudesDataSource.itemIdentifier(for: indexPath)
             selectedDudes.remove(deselectedDude!)
             selectedDudes.count == 0 ? createStickerpackButton.isEnabled = false : nil
-            let selectedDudesCount = String(format: "%02d", selectedDudes.count)
-            selectedLabel.text = "\(selectedDudesCount)/\(selectedDudesLimit) SELECTED"
+            let dudesCount = String(format: "%02d", selectedDudes.count)
+            let dudesLimit = String(format: "%02d", selectedDudesLimit)
+            selectedLabel.text = "\(dudesCount)/\(dudesLimit) SELECTED"
         }
     }
 }

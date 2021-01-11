@@ -11,6 +11,8 @@ import Foundation
 import Messages
 import MessageUI
 
+public let DudesInStickerpackLimit: Int = 30
+
 class StickerpackViewController: UIViewController, UICollectionViewDelegate {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -31,32 +33,14 @@ class StickerpackViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var emptyStateView: UIStackView!
     @IBOutlet weak var shareStickerpackButton: UIButton!
     @IBAction func shareStickerpack(_ sender: UIButton) {
-//        saveStickerpack()
-//        (UserDefaults.standard.value(forKey: "isFirstLaunch") as! Bool) ? showExplanataryAlert() : showAlert("SAVED!")
-//        UserDefaults.standard.setValue(false, forKey: "isFirstLaunch")
-        
-        let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        for messenger in Messenger.allCases {
-            let actionAlert: UIAlertAction = UIAlertAction(title: messenger.rawValue, style: .default) { action in
-                // Sharing action here
-                print(messenger.rawValue)
-            }
-            controller.addAction(actionAlert)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        cancelAction.setValue(UIColor.lightGray, forKey: "titleTextColor")
-        
-        controller.addAction(cancelAction)
-        controller.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "ActionSheet")
-        controller.view.tintColor = UIColor(named: "AccentColor")
-        
-        self.present(controller, animated: true, completion: nil)
+        shareStickerpackActionSheet()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierarchy()
         configureDataSource()
+        saveStickerpack()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,7 +108,7 @@ extension StickerpackViewController {
             self.stickerpack.isInUpdateMode = true
             destinationVC.dudesBeforeUpdate = self.dudes
             destinationVC.stickerpack = self.stickerpack
-            destinationVC.selectedDudesLimit = 99 - self.dudes.count
+            destinationVC.selectedDudesLimit = DudesInStickerpackLimit - self.dudes.count
         }
     }
 }
@@ -271,29 +255,97 @@ extension StickerpackViewController {
 
 
 
+// MARK: - Sharing action sheet
+extension StickerpackViewController {
+    func shareStickerpackActionSheet() {
+        let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        for messenger in Messenger.allCases {
+            let actionAlert: UIAlertAction = UIAlertAction(title: messenger.rawValue, style: .default) { [self] action in
+
+                switch messenger {
+                case .telegram:
+                    telegramExport()
+                case .whatsapp:
+                    whatsappExport()
+                case .imessage:
+                    imessageExport()
+                }
+                
+            }
+            controller.addAction(actionAlert)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        cancelAction.setValue(UIColor.lightGray, forKey: "titleTextColor")
+        
+        controller.addAction(cancelAction)
+        controller.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "ActionSheet")
+        controller.view.tintColor = UIColor(named: "AccentColor")
+        controller.view.overrideUserInterfaceStyle = .dark
+        
+        self.present(controller, animated: true, completion: nil)
+    }
+}
+
+
+
 // MARK: - Telegram export
 extension StickerpackViewController {
-    func exportToTelegram() {
+    func telegramExport() {
         let dudesImages = dudes.map { UIImage(data: $0.image)!.convertToString() }
         let emojis = self.dudes.map { $0.emotion }
         let id = stickerpack.id!
 
-        postRequest(id: id, emojis: emojis, dudes: dudesImages) { (success, error) in
-            DispatchQueue.main.async() { [self] in
-            removeSpinner()
-            if success {
-                let botURL = URL.init(string: "tg://resolve?domain=DudesStickersBot?start=\(stickerpack.id!)")
+        if !NetworkState.isConnectedToNetwork() {
+            self.showAlert("No internet connection")
+        } else {
+            self.showSpinner()
+            postRequest(id: id, emojis: emojis, dudes: dudesImages) { (success, error) in
+                DispatchQueue.main.async() { [self] in
+                removeSpinner()
+                if success {
+                    var action: String = "exportStickerpack"
+                    if stickerpack.isExported == true {
+                        action = "updateStickerpack"
+                    } else {
+                        action = "exportStickerpack"
+                    }
+                    
+                    let botURL = URL.init(string: "tg://resolve?domain=DudesStickersBot?start=\(stickerpack.id!)_\(action)")
 
-                if UIApplication.shared.canOpenURL(botURL!) {
-                    UIApplication.shared.open(botURL!)
+                    if UIApplication.shared.canOpenURL(botURL!) {
+                        stickerpack.isExported = true
+                        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                        UIApplication.shared.open(botURL!)
+                    } else {
+                        showAlert("Telegram is not installed",
+                                  "To export stickerpack for Telegram the Telegram app must be installed.")
+                    }
                 } else {
-                    showAlert("Telegram is not installed",
-                              "To export stickerpack for Telegram the Telegram app must be installed.")
-                }
-            } else {
-                    showAlert("Stickerpack request failed", "Please try again later.")
+                        showAlert("Stickerpack request failed", "Please try again later.")
+                    }
                 }
             }
         }
+    }
+}
+
+
+
+// MARK: - WhatsApp export
+extension StickerpackViewController {
+    func whatsappExport() {
+        //
+    }
+}
+
+
+
+// MARK: - iMessage export
+extension StickerpackViewController {
+    func imessageExport() {
+        // ⚠️ Change method later, disable automatic export ⚠️
+        // now stickerpack automatically shows up in iMessage, without selecting export
+        (UserDefaults.standard.value(forKey: "isFirstLaunch") as! Bool) ? showExplanataryAlert() : showAlert("EXPORTED!")
+        UserDefaults.standard.setValue(false, forKey: "isFirstLaunch")
     }
 }

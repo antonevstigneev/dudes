@@ -23,8 +23,6 @@ extension UIViewController {
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
             UIAlertAction in
-        
-            self.showMainViewController()
         }
         
         alert.addAction(okAction)
@@ -40,7 +38,7 @@ extension UIViewController {
         DispatchQueue.main.async {
             let attributedString = NSAttributedString(string: title, attributes: [
                 NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
-                NSAttributedString.Key.foregroundColor : UIColor(named: "AccentColor")!
+                NSAttributedString.Key.foregroundColor : UIColor.white
             ])
             let alertController = UIAlertController(title: "", message: message,  preferredStyle: .alert)
             alertController.setValue(attributedString, forKey: "attributedTitle")
