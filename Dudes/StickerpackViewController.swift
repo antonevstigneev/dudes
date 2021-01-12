@@ -291,7 +291,7 @@ extension StickerpackViewController {
 // MARK: - Telegram export
 extension StickerpackViewController {
     func telegramExport() {
-        let dudesImages = dudes.map { UIImage(data: $0.image)!.convertToString() }
+        let dudesImages = dudes.map { UIImage(data: $0.image)!.convertToBase64String() }
         let emojis = self.dudes.map { $0.emotion }
         let id = stickerpack.id!
 
@@ -334,7 +334,25 @@ extension StickerpackViewController {
 // MARK: - WhatsApp export
 extension StickerpackViewController {
     func whatsappExport() {
-        //
+        showSpinner()
+        
+        let trayImage = UIImage(data: self.dudes[0].image)?.convertToBase64String(targetSize: CGSize(width: 96, height: 96))
+        
+        let WAstickerpack = WAStickerPack(identifier: "dudes-\(self.stickerpack.id!)",
+                                          trayImagePNGData: trayImage!)
+        
+        for dude in dudes {
+            let emoji = WAStickerEmojis.canonicalizedEmoji(emoji: dude.emotion)
+            let stickerImage = UIImage(data: dude.image)!.resized(toWidth: 512.0)!.pngData()
+            let stickerImageData = WebPManager.shared.encode(pngData: stickerImage!)!.base64EncodedString()
+            print(stickerImageData.utf8.count)
+            WAstickerpack.addSticker(imageData: stickerImageData, emojis: [emoji])
+        }
+        
+        WAstickerpack.sendToWhatsApp { completed in
+            self.removeSpinner()
+            print("Stickerpack send to WhatsApp.")
+        }
     }
 }
 
@@ -349,3 +367,5 @@ extension StickerpackViewController {
         UserDefaults.standard.setValue(false, forKey: "isFirstLaunch")
     }
 }
+
+

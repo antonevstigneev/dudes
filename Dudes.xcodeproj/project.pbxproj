@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0327D825AE0F4600926EDF /* WhatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0327D725AE0F4600926EDF /* WhatsApp.swift */; };
 		3A0CA7F1255F2EB200AEB278 /* CVPixelBuffer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CA7F0255F2EB200AEB278 /* CVPixelBuffer+Helpers.swift */; };
 		3A0CA7F5255F2F7600AEB278 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CA7F4255F2F7600AEB278 /* UIImage+CVPixelBuffer.swift */; };
 		3A0CA7F8255F301300AEB278 /* CGImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CA7F7255F301300AEB278 /* CGImage+CVPixelBuffer.swift */; };
 		3A0D05CA254ED1B8002E5876 /* DudesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D05C9254ED1B8002E5876 /* DudesViewController.swift */; };
+		3A11E7F925AE498F00D4F40A /* WebPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A11E7F825AE498F00D4F40A /* WebPManager.swift */; };
 		3A1906D6258FF95000D6EE9C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1906D5258FF95000D6EE9C /* CloudKit.framework */; };
 		3A1F8D1B258E6DE700B78A42 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F8D1A258E6DE700B78A42 /* UICollectionViewExtension.swift */; };
 		3A2C465425A50DEF0014D437 /* UserDefaults+isFirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C465325A50DEF0014D437 /* UserDefaults+isFirstLaunch.swift */; };
@@ -18,6 +20,7 @@
 		3A453E2B258146FD00FA20C7 /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453E2A258146FD00FA20C7 /* NetworkState.swift */; };
 		3A453E3F2581777700FA20C7 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A453E3E2581777700FA20C7 /* UIButtonExtension.swift */; };
 		3A4802AF257E0C01000E04B5 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4802AE257E0C01000E04B5 /* Animations.swift */; };
+		3A4DAEE725AE47D4000120CA /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4DAEE625AE47D4000120CA /* WebP.framework */; };
 		3A4F941325A1D3D900CE3D23 /* Legal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F941225A1D3D900CE3D23 /* Legal.swift */; };
 		3A54F3FD2560E4980015C56A /* ShapeSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54F3FC2560E4980015C56A /* ShapeSkeleton.swift */; };
 		3A551B2B25663D310027684F /* EmotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A551B2A25663D310027684F /* EmotionModel.swift */; };
@@ -42,6 +45,11 @@
 		3A82B2AC2589029D008AEC06 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A82B2AB2589029D008AEC06 /* FilterCell.swift */; };
 		3A82B2B02589051E008AEC06 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A82B2AF2589051E008AEC06 /* Filter.swift */; };
 		3A87DD2925483EE800057501 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A87DD2725483EE800057501 /* UIViewExtension.swift */; };
+		3A883CB125AE46F30093FB3B /* YYImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A883CAB25AE46F30093FB3B /* YYImageCoder.m */; };
+		3A883CB225AE46F30093FB3B /* YYSpriteSheetImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A883CAC25AE46F30093FB3B /* YYSpriteSheetImage.m */; };
+		3A883CB325AE46F30093FB3B /* YYImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A883CAD25AE46F30093FB3B /* YYImage.m */; };
+		3A883CB425AE46F30093FB3B /* YYAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A883CAF25AE46F30093FB3B /* YYAnimatedImageView.m */; };
+		3A883CB525AE46F30093FB3B /* YYFrameImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A883CB025AE46F30093FB3B /* YYFrameImage.m */; };
 		3A8E9C7F254F0203007E2329 /* CGPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E9C7E254F0203007E2329 /* CGPointExtension.swift */; };
 		3A93FE6025491A1D00CE51FD /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A93FE5F25491A1D00CE51FD /* UIImageExtension.swift */; };
 		3AA2C52525A38F8100656D0D /* Stickerpack+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2C52125A38F8100656D0D /* Stickerpack+CoreDataClass.swift */; };
@@ -98,10 +106,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A0327D725AE0F4600926EDF /* WhatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsApp.swift; sourceTree = "<group>"; };
 		3A0CA7F0255F2EB200AEB278 /* CVPixelBuffer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Helpers.swift"; sourceTree = "<group>"; };
 		3A0CA7F4255F2F7600AEB278 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		3A0CA7F7255F301300AEB278 /* CGImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		3A0D05C9254ED1B8002E5876 /* DudesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DudesViewController.swift; sourceTree = "<group>"; };
+		3A11E7F825AE498F00D4F40A /* WebPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebPManager.swift; path = Dudes/WebPManager.swift; sourceTree = SOURCE_ROOT; };
 		3A1906D3258FF91000D6EE9C /* Dudes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dudes.entitlements; sourceTree = "<group>"; };
 		3A1906D5258FF95000D6EE9C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3A1F8D1A258E6DE700B78A42 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
@@ -110,6 +120,7 @@
 		3A453E2A258146FD00FA20C7 /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
 		3A453E3E2581777700FA20C7 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		3A4802AE257E0C01000E04B5 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		3A4DAEE625AE47D4000120CA /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebP.framework; sourceTree = "<group>"; };
 		3A4F940C25A1C7CE00CE3D23 /* DudesDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DudesDebug.entitlements; sourceTree = "<group>"; };
 		3A4F941225A1D3D900CE3D23 /* Legal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legal.swift; sourceTree = "<group>"; };
 		3A54F3FC2560E4980015C56A /* ShapeSkeleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeSkeleton.swift; sourceTree = "<group>"; };
@@ -131,6 +142,17 @@
 		3A82B2AB2589029D008AEC06 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		3A82B2AF2589051E008AEC06 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		3A87DD2725483EE800057501 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		3A883CA625AE46F20093FB3B /* Dudes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dudes-Bridging-Header.h"; sourceTree = "<group>"; };
+		3A883CA725AE46F20093FB3B /* YYFrameImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFrameImage.h; sourceTree = "<group>"; };
+		3A883CA825AE46F20093FB3B /* YYImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYImage.h; sourceTree = "<group>"; };
+		3A883CA925AE46F20093FB3B /* YYAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYAnimatedImageView.h; sourceTree = "<group>"; };
+		3A883CAA25AE46F20093FB3B /* YYImageCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYImageCoder.h; sourceTree = "<group>"; };
+		3A883CAB25AE46F30093FB3B /* YYImageCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYImageCoder.m; sourceTree = "<group>"; };
+		3A883CAC25AE46F30093FB3B /* YYSpriteSheetImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYSpriteSheetImage.m; sourceTree = "<group>"; };
+		3A883CAD25AE46F30093FB3B /* YYImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYImage.m; sourceTree = "<group>"; };
+		3A883CAE25AE46F30093FB3B /* YYSpriteSheetImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSpriteSheetImage.h; sourceTree = "<group>"; };
+		3A883CAF25AE46F30093FB3B /* YYAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYAnimatedImageView.m; sourceTree = "<group>"; };
+		3A883CB025AE46F30093FB3B /* YYFrameImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFrameImage.m; sourceTree = "<group>"; };
 		3A8E9C7E254F0203007E2329 /* CGPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtension.swift; sourceTree = "<group>"; };
 		3A93FE5F25491A1D00CE51FD /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		3AA2C52125A38F8100656D0D /* Stickerpack+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stickerpack+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -140,7 +162,6 @@
 		3AAA9582259C7F300064A3A2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		3AAA9594259DA18B0064A3A2 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		3AB4FC30256355910050C898 /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
-		3ABA0C202595BCCD003560FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3AC877EE25A64C90004C192C /* Dudes Stickers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dudes Stickers.entitlements"; sourceTree = "<group>"; };
 		3ACE4B8025334484001AF0F6 /* Dudes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dudes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ACE4B8325334484001AF0F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4DAEE725AE47D4000120CA /* WebP.framework in Frameworks */,
 				3A1906D6258FF95000D6EE9C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +222,7 @@
 		3A6F74F1257789D1004DC417 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3A11E7F825AE498F00D4F40A /* WebPManager.swift */,
 				3AAA9594259DA18B0064A3A2 /* DeviceInfo.swift */,
 				3A54F3FC2560E4980015C56A /* ShapeSkeleton.swift */,
 				3A4802AE257E0C01000E04B5 /* Animations.swift */,
@@ -207,6 +230,7 @@
 				3A453E2A258146FD00FA20C7 /* NetworkState.swift */,
 				3AED8AD52589918C00EA08AE /* SpinnerIndicator.swift */,
 				3A66166F25AB3C1A00753294 /* Messenger.swift */,
+				3A0327D725AE0F4600926EDF /* WhatsApp.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -232,6 +256,24 @@
 				3A2C465325A50DEF0014D437 /* UserDefaults+isFirstLaunch.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3AA18BC225AE44E40089DAC5 /* WebP */ = {
+			isa = PBXGroup;
+			children = (
+				3A883CA925AE46F20093FB3B /* YYAnimatedImageView.h */,
+				3A883CAF25AE46F30093FB3B /* YYAnimatedImageView.m */,
+				3A883CA725AE46F20093FB3B /* YYFrameImage.h */,
+				3A883CB025AE46F30093FB3B /* YYFrameImage.m */,
+				3A883CA825AE46F20093FB3B /* YYImage.h */,
+				3A883CAD25AE46F30093FB3B /* YYImage.m */,
+				3A883CAA25AE46F20093FB3B /* YYImageCoder.h */,
+				3A883CAB25AE46F30093FB3B /* YYImageCoder.m */,
+				3A883CAE25AE46F30093FB3B /* YYSpriteSheetImage.h */,
+				3A883CAC25AE46F30093FB3B /* YYSpriteSheetImage.m */,
+				3A883CA625AE46F20093FB3B /* Dudes-Bridging-Header.h */,
+			);
+			path = WebP;
 			sourceTree = "<group>";
 		};
 		3AA2C52025A38F7000656D0D /* CoreData */ = {
@@ -267,6 +309,7 @@
 		3ACE4B8225334484001AF0F6 /* Dudes */ = {
 			isa = PBXGroup;
 			children = (
+				3AA18BC225AE44E40089DAC5 /* WebP */,
 				3A6F74F1257789D1004DC417 /* Helpers */,
 				3A87DD2625483EDB00057501 /* Extensions */,
 				3A0CA7EF255F2E9E00AEB278 /* CoreMLHelpers */,
@@ -325,7 +368,7 @@
 		F90180952E679FC11508A91C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3ABA0C202595BCCD003560FF /* StoreKit.framework */,
+				3A4DAEE625AE47D4000120CA /* WebP.framework */,
 				3A1906D5258FF95000D6EE9C /* CloudKit.framework */,
 				3AF8492525A361FE0013DB5B /* Messages.framework */,
 			);
@@ -350,8 +393,6 @@
 				3AF8494E25A362A60013DB5B /* PBXTargetDependency */,
 			);
 			name = Dudes;
-			packageProductDependencies = (
-			);
 			productName = AbstractFace;
 			productReference = 3ACE4B8025334484001AF0F6 /* Dudes.app */;
 			productType = "com.apple.product-type.application";
@@ -384,6 +425,7 @@
 				TargetAttributes = {
 					3ACE4B7F25334484001AF0F6 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1230;
 					};
 					3AF8494125A362A40013DB5B = {
 						CreatedOnToolsVersion = 12.3;
@@ -399,8 +441,6 @@
 				Base,
 			);
 			mainGroup = 3ACE4B7725334484001AF0F6;
-			packageReferences = (
-			);
 			productRefGroup = 3ACE4B8125334484001AF0F6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -446,8 +486,10 @@
 				3A603847258AA7EE00D648AD /* DateExtension.swift in Sources */,
 				3AD842522556F90900751D92 /* CGPathExtension.swift in Sources */,
 				3A54F3FD2560E4980015C56A /* ShapeSkeleton.swift in Sources */,
+				3A883CB125AE46F30093FB3B /* YYImageCoder.m in Sources */,
 				3A8E9C7F254F0203007E2329 /* CGPointExtension.swift in Sources */,
 				3ADB78C3257FD1B300F7C8FA /* StringExtension.swift in Sources */,
+				3A883CB225AE46F30093FB3B /* YYSpriteSheetImage.m in Sources */,
 				3A82B2AC2589029D008AEC06 /* FilterCell.swift in Sources */,
 				3ACE4BA225334C36001AF0F6 /* DudesModel.swift in Sources */,
 				3A0CA7F1255F2EB200AEB278 /* CVPixelBuffer+Helpers.swift in Sources */,
@@ -455,7 +497,9 @@
 				3AD842552556F91900751D92 /* UIBezierPathExtension.swift in Sources */,
 				3A82B2B02589051E008AEC06 /* Filter.swift in Sources */,
 				3AD73841258D6D2200A6107C /* UIStackViewExtension.swift in Sources */,
+				3A883CB425AE46F30093FB3B /* YYAnimatedImageView.m in Sources */,
 				3AE9D71A25683A4C001E4F37 /* emotion_classifier.mlmodel in Sources */,
+				3A11E7F925AE498F00D4F40A /* WebPManager.swift in Sources */,
 				3A93FE6025491A1D00CE51FD /* UIImageExtension.swift in Sources */,
 				3A87DD2925483EE800057501 /* UIViewExtension.swift in Sources */,
 				3A60383F258AA45B00D648AD /* StickerpacksViewController.swift in Sources */,
@@ -464,8 +508,10 @@
 				3AAA9595259DA18B0064A3A2 /* DeviceInfo.swift in Sources */,
 				3A5AA3C72579179400BDBD68 /* dudes.mlmodel in Sources */,
 				3AD8426025573F4700751D92 /* UIColor.swift in Sources */,
+				3A883CB325AE46F30093FB3B /* YYImage.m in Sources */,
 				3AA2C52725A38F8100656D0D /* Stickerpack+CoreDataProperties.swift in Sources */,
 				3AAA9583259C7F300064A3A2 /* AboutViewController.swift in Sources */,
+				3A883CB525AE46F30093FB3B /* YYFrameImage.m in Sources */,
 				3A603837258A8F7C00D648AD /* Dude.swift in Sources */,
 				3A4F941325A1D3D900CE3D23 /* Legal.swift in Sources */,
 				3A453E3F2581777700FA20C7 /* UIButtonExtension.swift in Sources */,
@@ -477,6 +523,7 @@
 				3A551B2B25663D310027684F /* EmotionModel.swift in Sources */,
 				3A4802AF257E0C01000E04B5 /* Animations.swift in Sources */,
 				3A0CA7F5255F2F7600AEB278 /* UIImage+CVPixelBuffer.swift in Sources */,
+				3A0327D825AE0F4600926EDF /* WhatsApp.swift in Sources */,
 				3A5AA3C1257913DF00BDBD68 /* DudesGenerator.swift in Sources */,
 				3A5BDA77257FF1C7005FB1B7 /* PostRequests.swift in Sources */,
 				3A60384B258AB31400D648AD /* UIViewControllerExtension.swift in Sources */,
@@ -656,10 +703,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Dudes/DudesDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = NNR45DX7YX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Dudes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -668,6 +720,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.getdudesapp.Dudes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dudes/WebP/Dudes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -679,10 +733,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Dudes/Dudes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = NNR45DX7YX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Dudes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -691,6 +750,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.getdudesapp.Dudes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dudes/WebP/Dudes-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

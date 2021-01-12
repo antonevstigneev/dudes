@@ -33,7 +33,7 @@ extension UIImage {
 
 
 extension UIImage {
-    func convertToString(targetSize: CGSize = CGSize(width: 512, height: 512)) -> String {
+    func convertToBase64String(targetSize: CGSize = CGSize(width: 512, height: 512)) -> String {
         let size = self.size
         let widthRatio  = targetSize.width  / size.width
         let heightRatio = targetSize.height / size.height
@@ -46,6 +46,26 @@ extension UIImage {
         UIGraphicsEndImageContext()
         
         return newImage!.pngData()?.base64EncodedString() ?? ""
+    }
+}
+
+
+extension UIImage {
+    func resized(withPercentage percentage: CGFloat, isOpaque: Bool = false) -> UIImage? {
+        let canvas = CGSize(width: size.width * percentage, height: size.height * percentage)
+        let format = imageRendererFormat
+        format.opaque = isOpaque
+        return UIGraphicsImageRenderer(size: canvas, format: format).image {
+            _ in draw(in: CGRect(origin: .zero, size: canvas))
+        }
+    }
+    func resized(toWidth width: CGFloat, isOpaque: Bool = false) -> UIImage? {
+        let canvas = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
+        let format = imageRendererFormat
+        format.opaque = isOpaque
+        return UIGraphicsImageRenderer(size: canvas, format: format).image {
+            _ in draw(in: CGRect(origin: .zero, size: canvas))
+        }
     }
 }
 

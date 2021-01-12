@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(isFirstLaunch)
         UserDefaults.standard.setValue(isFirstLaunch, forKey: "isFirstLaunch")
         setupDefaultNavigationBarStyles()
-
+        
         return true
     }
 
