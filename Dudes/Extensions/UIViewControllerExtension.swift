@@ -65,34 +65,6 @@ extension UIViewController {
 }
 
 
-extension UIViewController {
-    func showExplanataryAlert() {
-        
-        let attributedString = NSAttributedString(string: "SAVED!", attributes: [
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .semibold),
-            NSAttributedString.Key.foregroundColor : UIColor.black
-        ])
-        let showAlert = UIAlertController(title: "", message: nil, preferredStyle: .alert)
-        
-        showAlert.setValue(attributedString, forKey: "attributedTitle")
-        showAlert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor(named: "AccentColor")
-        showAlert.view.tintColor = .black
-        let imageView = UIImageView(frame: CGRect(x: 10, y: 60, width: 250, height: 158))
-        imageView.image = UIImage(named: "iMessageDudes")
-        showAlert.view.addSubview(imageView)
-        let height = NSLayoutConstraint(item: showAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 285)
-        let width = NSLayoutConstraint(item: showAlert.view!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
-        showAlert.view.addConstraint(height)
-        showAlert.view.addConstraint(width)
-        showAlert.addAction(UIAlertAction(title: "Go to iMessage", style: .default, handler: { action in
-            UIApplication.shared.open(URL(string: "sms:")!, options: [:], completionHandler: nil)
-            self.showMainViewController()
-        }))
-        self.present(showAlert, animated: true, completion: nil)
-    }
-}
-
-
 
 // MARK: - Sharing method
 extension UIViewController {

@@ -32,14 +32,12 @@ class StickerpacksViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchStickerpacksData()
-        configureHierarchy()
-        configureDataSource()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupNavigationItems()
         fetchStickerpacksData()
+        configureHierarchy()
         configureDataSource()
     }
 

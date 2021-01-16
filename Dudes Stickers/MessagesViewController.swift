@@ -60,7 +60,6 @@ class MessagesViewController: MSMessagesAppViewController, UICollectionViewDeleg
                     guard   let img = UIImage(data: sticker.image!),
                             let url = img.save(at: fileManager!,
                                                pathAndImageName: path) else { return }
-                    
                     let sticker = try! MSSticker(contentsOfFileURL: url, localizedDescription: "sticker")
                     stickers.append(sticker)
                 }

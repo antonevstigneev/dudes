@@ -261,7 +261,6 @@ extension StickerpackViewController {
         let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         for messenger in Messenger.allCases {
             let actionAlert: UIAlertAction = UIAlertAction(title: messenger.rawValue, style: .default) { [self] action in
-
                 switch messenger {
                 case .telegram:
                     telegramExport()
@@ -270,7 +269,6 @@ extension StickerpackViewController {
                 case .imessage:
                     imessageExport()
                 }
-                
             }
             controller.addAction(actionAlert)
         }
@@ -291,7 +289,7 @@ extension StickerpackViewController {
 // MARK: - Telegram export
 extension StickerpackViewController {
     func telegramExport() {
-        let dudesImages = dudes.map { UIImage(data: $0.image)!.convertToBase64String() }
+        let dudesImages = dudes.map { WebPManager.shared.encode(pngData: (UIImage(data: $0.image)!.resized(toWidth: 512.0)!.pngData())!)!.base64EncodedString() }
         let emojis = self.dudes.map { $0.emotion }
         let id = stickerpack.id!
 
@@ -309,7 +307,7 @@ extension StickerpackViewController {
                     } else {
                         action = "exportStickerpack"
                     }
-                    
+
                     let botURL = URL.init(string: "tg://resolve?domain=DudesStickersBot?start=\(stickerpack.id!)_\(action)")
 
                     if UIApplication.shared.canOpenURL(botURL!) {
@@ -318,7 +316,7 @@ extension StickerpackViewController {
                         UIApplication.shared.open(botURL!)
                     } else {
                         showAlert("Telegram is not installed",
-                                  "To export stickerpack for Telegram the Telegram app must be installed.")
+                                  "To export stickerpack Telegram must be installed.")
                     }
                 } else {
                         showAlert("Stickerpack request failed", "Please try again later.")
@@ -334,24 +332,29 @@ extension StickerpackViewController {
 // MARK: - WhatsApp export
 extension StickerpackViewController {
     func whatsappExport() {
-        showSpinner()
         
-        let trayImage = UIImage(data: self.dudes[0].image)?.convertToBase64String(targetSize: CGSize(width: 96, height: 96))
-        
-        let WAstickerpack = WAStickerPack(identifier: "dudes-\(self.stickerpack.id!)",
-                                          trayImagePNGData: trayImage!)
-        
-        for dude in dudes {
-            let emoji = WAStickerEmojis.canonicalizedEmoji(emoji: dude.emotion)
-            let stickerImage = UIImage(data: dude.image)!.resized(toWidth: 512.0)!.pngData()
-            let stickerImageData = WebPManager.shared.encode(pngData: stickerImage!)!.base64EncodedString()
-            print(stickerImageData.utf8.count)
-            WAstickerpack.addSticker(imageData: stickerImageData, emojis: [emoji])
-        }
-        
-        WAstickerpack.sendToWhatsApp { completed in
-            self.removeSpinner()
-            print("Stickerpack send to WhatsApp.")
+        if WAInteroperability.canSend() == false {
+            showAlert("WhatsApp is not installed",
+                      "To export stickerpack WhatsApp must be installed.")
+        } else {
+            showSpinner()
+            let trayImage = UIImage(data: self.dudes[0].image)?.convertToBase64String(targetSize: CGSize(width: 96, height: 96))
+            let WAstickerpack = WAStickerPack(identifier: "dudes-\(self.stickerpack.id!)",
+                                              trayImagePNGData: trayImage!)
+            for dude in dudes {
+                let emoji = WAStickerEmojis.canonicalizedEmoji(emoji: dude.emotion)
+                let stickerImage = UIImage(data: dude.image)!.resized(toWidth: 512.0)!.pngData()
+                let stickerImageData = WebPManager.shared.encode(pngData: stickerImage!)!.base64EncodedString()
+                WAstickerpack.addSticker(imageData: stickerImageData, emojis: [emoji])
+            }
+            
+            WAstickerpack.sendToWhatsApp { completed in
+                if completed {
+                    self.removeSpinner()
+                } else {
+                    self.showAlert("Stickerpack export failed")
+                }
+            }
         }
     }
 }
@@ -361,10 +364,7 @@ extension StickerpackViewController {
 // MARK: - iMessage export
 extension StickerpackViewController {
     func imessageExport() {
-        // ⚠️ Change method later, disable automatic export ⚠️
-        // now stickerpack automatically shows up in iMessage, without selecting export
-        (UserDefaults.standard.value(forKey: "isFirstLaunch") as! Bool) ? showExplanataryAlert() : showAlert("EXPORTED!")
-        UserDefaults.standard.setValue(false, forKey: "isFirstLaunch")
+        showAlert("EXPORTED!")
     }
 }
 
